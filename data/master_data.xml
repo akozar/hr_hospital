@@ -1,0 +1,18 @@
+<odoo>
+
+    <record id="osl_disease_1" model="hr.hospital.disease">
+        <field name="name">Procrastinitis (Type B)</field>
+        <field name="description">An irresistible urge to start recovery "next Monday" and organize spice racks instead of working.</field>
+    </record>
+
+    <record id="osl_disease_2" model="hr.hospital.disease">
+        <field name="name">The "Reply-All" Rash</field>
+        <field name="description">Extreme facial heat and panic following an accidental company-wide email blunder.</field>
+    </record>
+
+    <record id="osl_disease_3" model="hr.hospital.disease">
+        <field name="name">Sentient Elbow Syndrome</field>
+        <field name="description">A condition where the funny bone develops its own personality, often resulting in involuntary jazz hands.</field>
+    </record>
+
+</odoo>
