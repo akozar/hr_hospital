@@ -1,0 +1,14 @@
+<odoo>
+    <record id="doctor_demo_1" model="hr.hospital.doctor">
+        <field name="name">Dr. Ivan Petrenko</field>
+        <field name="description">Chief Surgeon with 15 years of experience</field>
+    </record>
+    <record id="doctor_demo_2" model="hr.hospital.doctor">
+        <field name="name">Dr. Olena Kovalenko</field>
+        <field name="description">Therapist specializing in internal medicine</field>
+    </record>
+    <record id="doctor_demo_3" model="hr.hospital.doctor">
+        <field name="name">Dr. Mykola Shevchenko</field>
+        <field name="description">Pediatrician with expertise in child development</field>
+    </record>
+</odoo>

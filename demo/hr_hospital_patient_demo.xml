@@ -1,0 +1,17 @@
+<odoo>
+    <record id="patient_demo_1" model="hr.hospital.patient">
+        <field name="name">Anna Bondarenko</field>
+        <field name="description">Regular checkup patient</field>
+        <field name="doctor_id" ref="doctor_demo_1"/>
+    </record>
+    <record id="patient_demo_2" model="hr.hospital.patient">
+        <field name="name">Petro Lysenko</field>
+        <field name="description">Follow-up care patient</field>
+        <field name="doctor_id" ref="doctor_demo_2"/>
+    </record>
+    <record id="patient_demo_3" model="hr.hospital.patient">
+        <field name="name">Oksana Melnyk</field>
+        <field name="description">Pediatric patient</field>
+        <field name="doctor_id" ref="doctor_demo_3"/>
+    </record>
+</odoo>

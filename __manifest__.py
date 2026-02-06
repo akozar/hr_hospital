@@ -25,6 +25,8 @@
         # 'views/hr_hospital_patient_views.xml',
     ],
     'demo': [
+        'demo/hr_hospital_doctor_demo.xml',
+        'demo/hr_hospital_patient_demo.xml',
     ],
 
     'installable': True,
