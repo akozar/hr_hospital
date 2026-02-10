@@ -8,6 +8,11 @@
         <field name="phone">+380501234567</field>
         <field name="email">ivan.petrenko@hospital.ua</field>
         <field name="description">Chief Surgeon with 15 years of experience</field>
+        <field name="specialty_id" ref="specialty_demo_surgery"/>
+        <field name="license_number">LIC-001-2010</field>
+        <field name="license_date">2010-06-15</field>
+        <field name="rating">4.85</field>
+        <field name="is_intern" eval="False"/>
     </record>
     <record id="doctor_demo_2" model="hr.hospital.doctor">
         <field name="surname">Kovalenko</field>
@@ -19,6 +24,11 @@
         <field name="email">olena.kovalenko@hospital.ua</field>
         <field name="description">Therapist specializing in internal medicine</field>
         <field name="supervisor_id" ref="doctor_demo_1"/>
+        <field name="specialty_id" ref="specialty_demo_therapy"/>
+        <field name="license_number">LIC-002-2012</field>
+        <field name="license_date">2012-03-20</field>
+        <field name="rating">4.60</field>
+        <field name="is_intern" eval="False"/>
     </record>
     <record id="doctor_demo_3" model="hr.hospital.doctor">
         <field name="surname">Shevchenko</field>
@@ -30,5 +40,26 @@
         <field name="email">mykola.shevchenko@hospital.ua</field>
         <field name="description">Pediatrician with expertise in child development</field>
         <field name="supervisor_id" ref="doctor_demo_1"/>
+        <field name="specialty_id" ref="specialty_demo_pediatrics"/>
+        <field name="license_number">LIC-003-2015</field>
+        <field name="license_date">2015-09-01</field>
+        <field name="rating">4.75</field>
+        <field name="is_intern" eval="False"/>
+    </record>
+    <record id="doctor_demo_4" model="hr.hospital.doctor">
+        <field name="surname">Bondar</field>
+        <field name="first_name">Andriy</field>
+        <field name="patronymic">Vasyliovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1995-04-10</field>
+        <field name="phone">+380504567890</field>
+        <field name="email">andriy.bondar@hospital.ua</field>
+        <field name="description">Medical intern in cardiology</field>
+        <field name="specialty_id" ref="specialty_demo_cardiology"/>
+        <field name="license_number">LIC-004-2024</field>
+        <field name="license_date">2024-01-15</field>
+        <field name="rating">4.00</field>
+        <field name="is_intern" eval="True"/>
+        <field name="mentor_id" ref="doctor_demo_1"/>
     </record>
 </odoo>

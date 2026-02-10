@@ -1,0 +1,22 @@
+<odoo>
+    <record id="specialty_demo_surgery" model="hr.hospital.doctor.specialty">
+        <field name="name">Surgery</field>
+        <field name="code">SURG001</field>
+        <field name="description">General and specialized surgical procedures</field>
+    </record>
+    <record id="specialty_demo_therapy" model="hr.hospital.doctor.specialty">
+        <field name="name">Internal Medicine</field>
+        <field name="code">THER001</field>
+        <field name="description">Diagnosis and treatment of internal diseases</field>
+    </record>
+    <record id="specialty_demo_pediatrics" model="hr.hospital.doctor.specialty">
+        <field name="name">Pediatrics</field>
+        <field name="code">PEDI001</field>
+        <field name="description">Medical care for infants, children, and adolescents</field>
+    </record>
+    <record id="specialty_demo_cardiology" model="hr.hospital.doctor.specialty">
+        <field name="name">Cardiology</field>
+        <field name="code">CARD001</field>
+        <field name="description">Heart and cardiovascular system disorders</field>
+    </record>
+</odoo>

@@ -33,23 +33,42 @@
                             <field name="gender"/>
                             <field name="birth_date"/>
                             <field name="age"/>
+                            <field name="passport_data"/>
                         </group>
                         <group string="Contact Information">
                             <field name="phone"/>
                             <field name="email"/>
                             <field name="country_id"/>
                             <field name="lang_id"/>
+                            <field name="contact_person_id"/>
                         </group>
                     </group>
                     <group>
                         <group string="Medical Information">
                             <field name="doctor_id"/>
+                            <field name="blood_group"/>
+                            <field name="allergies"/>
                             <field name="description"/>
                         </group>
-                        <group>
+                        <group string="Insurance">
+                            <field name="insurance_company_id"/>
+                            <field name="insurance_policy_number"/>
                             <field name="res_partner_id"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Doctor History">
+                            <field name="doctor_history_ids">
+                                <list>
+                                    <field name="doctor_id"/>
+                                    <field name="date_start"/>
+                                    <field name="date_end"/>
+                                    <field name="reason"/>
+                                    <field name="active"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

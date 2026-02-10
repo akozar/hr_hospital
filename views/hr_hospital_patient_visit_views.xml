@@ -4,9 +4,13 @@
         <field name="model">hr.hospital.patient.visit</field>
         <field name="arch" type="xml">
             <list>
-                <field name="visit_time"/>
+                <field name="scheduled_time"/>
                 <field name="patient_id"/>
-                <field name="disease_id"/>
+                <field name="doctor_id"/>
+                <field name="visit_type"/>
+                <field name="state"/>
+                <field name="cost"/>
+                <field name="currency_id" column_invisible="1"/>
             </list>
         </field>
     </record>
@@ -16,16 +20,40 @@
         <field name="model">hr.hospital.patient.visit</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="scheduled,done,cancelled"/>
+                </header>
                 <sheet>
                     <group>
                         <group string="Visit Information">
-                            <field name="visit_time"/>
                             <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                            <field name="visit_type"/>
+                            <field name="scheduled_time"/>
+                            <field name="actual_time" readonly="state != 'done'"/>
                         </group>
-                        <group string="Medical Information">
-                            <field name="disease_id"/>
+                        <group string="Financial">
+                            <field name="cost"/>
+                            <field name="currency_id"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Diagnoses">
+                            <field name="diagnosis_ids">
+                                <list editable="bottom">
+                                    <field name="disease_id"/>
+                                    <field name="severity"/>
+                                    <field name="description"/>
+                                    <field name="is_approved"/>
+                                    <field name="approved_by_id"/>
+                                    <field name="approval_date"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Recommendations">
+                            <field name="recommendations"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

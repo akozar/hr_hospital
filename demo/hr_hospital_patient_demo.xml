@@ -9,6 +9,9 @@
         <field name="email">anna.bondarenko@gmail.com</field>
         <field name="description">Regular checkup patient</field>
         <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="passport_data">AB123456</field>
+        <field name="blood_group">a_pos</field>
+        <field name="contact_person_id" ref="contact_person_demo_1"/>
     </record>
     <record id="patient_demo_2" model="hr.hospital.patient">
         <field name="surname">Lysenko</field>
@@ -20,6 +23,10 @@
         <field name="email">petro.lysenko@gmail.com</field>
         <field name="description">Follow-up care patient</field>
         <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="passport_data">CD789012</field>
+        <field name="blood_group">o_neg</field>
+        <field name="allergies">Penicillin, Aspirin</field>
+        <field name="contact_person_id" ref="contact_person_demo_2"/>
     </record>
     <record id="patient_demo_3" model="hr.hospital.patient">
         <field name="surname">Melnyk</field>
@@ -31,5 +38,7 @@
         <field name="email">melnyk.family@gmail.com</field>
         <field name="description">Pediatric patient</field>
         <field name="doctor_id" ref="doctor_demo_3"/>
+        <field name="passport_data">EF345678</field>
+        <field name="blood_group">b_pos</field>
     </record>
 </odoo>

@@ -5,9 +5,11 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="description"/>
-                <field name="supervisor_id"/>
-                <field name="res_partner_id"/>
+                <field name="specialty_id"/>
+                <field name="license_number"/>
+                <field name="experience_years"/>
+                <field name="rating"/>
+                <field name="is_intern"/>
             </list>
         </field>
     </record>
@@ -24,6 +26,7 @@
                         <h1>
                             <field name="name" readonly="1"/>
                         </h1>
+                        <field name="specialty_id" placeholder="Specialty"/>
                     </div>
                     <group>
                         <group string="Personal Information">
@@ -42,15 +45,38 @@
                         </group>
                     </group>
                     <group>
-                        <group string="Work Information">
-                            <field name="supervisor_id"/>
-                            <field name="description"/>
+                        <group string="Professional Information">
+                            <field name="license_number"/>
+                            <field name="license_date"/>
+                            <field name="experience_years"/>
+                            <field name="rating"/>
+                            <field name="education_country_id"/>
                         </group>
-                        <group>
-                            <field name="res_partner_id"/>
+                        <group string="Work Information">
+                            <field name="user_id"/>
+                            <field name="supervisor_id"/>
+                            <field name="is_intern"/>
+                            <field name="mentor_id" invisible="not is_intern"/>
                             <field name="active"/>
                         </group>
                     </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                    <notebook>
+                        <page string="Schedule">
+                            <field name="schedule_ids">
+                                <list editable="bottom">
+                                    <field name="day_of_week"/>
+                                    <field name="date"/>
+                                    <field name="time_from" widget="float_time"/>
+                                    <field name="time_to" widget="float_time"/>
+                                    <field name="schedule_type"/>
+                                    <field name="notes"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
