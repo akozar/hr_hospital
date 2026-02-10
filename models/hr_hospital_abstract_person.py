@@ -85,3 +85,15 @@ class AbstractPerson(models.AbstractModel):
         for record in self:
             if record.email and not email_pattern.match(record.email):
                 raise ValidationError("Invalid email format")
+
+    @api.constrains('birth_date')
+    def _check_age_positive(self):
+        today = date.today()
+        for record in self:
+            if record.birth_date:
+                if record.birth_date > today:
+                    raise ValidationError("Birth date cannot be in the future!")
+                bd = record.birth_date
+                age = today.year - bd.year - ((today.month, today.day) < (bd.month, bd.day))
+                if age <= 0:
+                    raise ValidationError("Age must be greater than 0!")

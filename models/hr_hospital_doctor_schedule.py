@@ -9,6 +9,11 @@ class HRHDoctorSchedule(models.Model):
     _name = 'hr.hospital.doctor.schedule'
     _description = 'Doctor Schedule'
 
+    _check_time_range = models.Constraint(
+        'CHECK(time_to > time_from)',
+        'End time must be greater than start time!',
+    )
+
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
         string='Doctor',

@@ -1,6 +1,7 @@
 import logging
 
-from odoo import models, fields
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -58,3 +59,40 @@ class HRHPatientVisit(models.Model):
         comodel_name='hr.hospital.disease',
         string='Disease',
     )
+
+    @api.constrains('patient_id', 'doctor_id', 'scheduled_time')
+    def _check_one_visit_per_day(self):
+        for record in self:
+            if record.scheduled_time and record.patient_id and record.doctor_id:
+                visit_date = record.scheduled_time.date()
+                existing = self.search([
+                    ('id', '!=', record.id),
+                    ('patient_id', '=', record.patient_id.id),
+                    ('doctor_id', '=', record.doctor_id.id),
+                    ('scheduled_time', '>=', visit_date.strftime('%Y-%m-%d 00:00:00')),
+                    ('scheduled_time', '<=', visit_date.strftime('%Y-%m-%d 23:59:59')),
+                    ('state', '!=', 'cancelled'),
+                ])
+                if existing:
+                    raise ValidationError(
+                        _("Patient '%s' already has a visit scheduled with doctor '%s' on %s!") %
+                        (record.patient_id.name, record.doctor_id.name, visit_date)
+                    )
+
+    def unlink(self):
+        for record in self:
+            if record.diagnosis_ids:
+                raise ValidationError(
+                    _("Cannot delete visit with diagnoses! Remove diagnoses first.")
+                )
+        return super().unlink()
+
+    def write(self, vals):
+        protected_fields = {'doctor_id', 'scheduled_time', 'patient_id'}
+        if protected_fields & set(vals.keys()):
+            for record in self:
+                if record.state == 'done':
+                    raise ValidationError(
+                        _("Cannot modify doctor, patient or scheduled time of completed visits!")
+                    )
+        return super().write(vals)
