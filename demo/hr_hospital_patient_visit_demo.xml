@@ -1,0 +1,27 @@
+<odoo>
+    <record id="patient_visit_demo_1" model="hr.hospital.patient.visit">
+        <field name="visit_time">2026-02-10 09:00:00</field>
+        <field name="patient_id" ref="patient_demo_1"/>
+        <field name="disease_id" ref="osl_disease_1"/>
+    </record>
+    <record id="patient_visit_demo_2" model="hr.hospital.patient.visit">
+        <field name="visit_time">2026-02-10 10:30:00</field>
+        <field name="patient_id" ref="patient_demo_2"/>
+        <field name="disease_id" ref="osl_disease_2"/>
+    </record>
+    <record id="patient_visit_demo_3" model="hr.hospital.patient.visit">
+        <field name="visit_time">2026-02-10 14:00:00</field>
+        <field name="patient_id" ref="patient_demo_3"/>
+        <field name="disease_id" ref="osl_disease_3"/>
+    </record>
+    <record id="patient_visit_demo_4" model="hr.hospital.patient.visit">
+        <field name="visit_time">2026-02-11 11:00:00</field>
+        <field name="patient_id" ref="patient_demo_1"/>
+        <field name="disease_id" ref="osl_disease_2"/>
+    </record>
+    <record id="patient_visit_demo_5" model="hr.hospital.patient.visit">
+        <field name="visit_time">2026-02-12 15:30:00</field>
+        <field name="patient_id" ref="patient_demo_2"/>
+        <field name="disease_id" ref="osl_disease_1"/>
+    </record>
+</odoo>

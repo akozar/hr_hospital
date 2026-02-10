@@ -7,8 +7,8 @@ _logger = logging.getLogger(__name__)
 class HRHPatient(models.Model):
     _name = "hr.hospital.patient"
     _description = "Patient"
+    _inherit = ['hr.hospital.abstract.person']
 
-    name = fields.Char()
     description = fields.Text()
 
     doctor_id = fields.Many2one(

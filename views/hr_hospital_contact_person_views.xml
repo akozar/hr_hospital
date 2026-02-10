@@ -1,23 +1,23 @@
 <odoo>
-    <record id="hr_hospital_patient_tree" model="ir.ui.view">
-        <field name="name">hr.hospital.patient.tree ()</field>
-        <field name="model">hr.hospital.patient</field>
+    <record id="hr_hospital_contact_person_tree" model="ir.ui.view">
+        <field name="name">hr.hospital.contact.person.tree</field>
+        <field name="model">hr.hospital.contact.person</field>
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="doctor_id"/>
-                <field name="description"/>
-                <field name="res_partner_id"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="gender"/>
+                <field name="age"/>
             </list>
         </field>
     </record>
 
-    <record id="hr_hospital_patient_form" model="ir.ui.view">
-        <field name="name">hr.hospital.patient.form ()</field>
-        <field name="model">hr.hospital.patient</field>
+    <record id="hr_hospital_contact_person_form" model="ir.ui.view">
+        <field name="name">hr.hospital.contact.person.form</field>
+        <field name="model">hr.hospital.contact.person</field>
         <field name="arch" type="xml">
             <form>
-                <header></header>
                 <sheet>
                     <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
                     <div class="oe_title">
@@ -41,29 +41,20 @@
                             <field name="lang_id"/>
                         </group>
                     </group>
-                    <group>
-                        <group string="Medical Information">
-                            <field name="doctor_id"/>
-                            <field name="description"/>
-                        </group>
-                        <group>
-                            <field name="res_partner_id"/>
-                        </group>
-                    </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <record id="action_hr_hospital_patient_window" model="ir.actions.act_window">
-        <field name="name">Patients</field>
+    <record id="action_hr_hospital_contact_person_window" model="ir.actions.act_window">
+        <field name="name">Contact Persons</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">hr.hospital.patient</field>
+        <field name="res_model">hr.hospital.contact.person</field>
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="hr_hospital_menu_patient"
-              action="action_hr_hospital_patient_window"
-              parent="hr_hospital_menu_patients"
-              name="Patient" sequence="200"/>
+    <menuitem id="hr_hospital_menu_contact_person"
+              action="action_hr_hospital_contact_person_window"
+              parent="hr_hospital_menu_other"
+              name="Contact Persons" sequence="100"/>
 </odoo>

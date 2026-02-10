@@ -1,0 +1,20 @@
+<odoo>
+    <record id="contact_person_demo_1" model="hr.hospital.contact.person">
+        <field name="surname">Tkachenko</field>
+        <field name="first_name">Natalia</field>
+        <field name="patronymic">Olehivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1985-04-20</field>
+        <field name="phone">+380681112233</field>
+        <field name="email">natalia.tkachenko@gmail.com</field>
+    </record>
+    <record id="contact_person_demo_2" model="hr.hospital.contact.person">
+        <field name="surname">Kravchuk</field>
+        <field name="first_name">Oleksiy</field>
+        <field name="patronymic">Dmytrovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1972-12-05</field>
+        <field name="phone">+380682223344</field>
+        <field name="email">oleksiy.kravchuk@ukr.net</field>
+    </record>
+</odoo>

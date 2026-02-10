@@ -7,8 +7,7 @@ _logger = logging.getLogger(__name__)
 class HRHDoctor(models.Model):
     _name = "hr.hospital.doctor"
     _description = "Doctor"
-
-    name = fields.Char()
+    _inherit = ['hr.hospital.abstract.person']
 
     active = fields.Boolean(
         default=True, )
