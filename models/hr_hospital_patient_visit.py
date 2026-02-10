@@ -17,8 +17,7 @@ class HRHPatientVisit(models.Model):
         string="Patient",
     )
 
-    disease_id = fields.One2many(
+    disease_id = fields.Many2one(
         comodel_name='hr.hospital.disease',
-        inverse_name='patient_visit_id',
-        string="Patient",
+        string="Disease",
     )

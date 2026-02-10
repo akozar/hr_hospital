@@ -11,7 +11,8 @@ class HRHDisease(models.Model):
     name = fields.Char()
     description = fields.Text()
 
-    patient_visit_id = fields.Many2one(
+    patient_visit_ids = fields.One2many(
         comodel_name='hr.hospital.patient.visit',
-        string='Patient visit',
+        inverse_name='disease_id',
+        string='Patient visits',
     )

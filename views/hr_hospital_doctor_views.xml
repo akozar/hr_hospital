@@ -6,6 +6,7 @@
             <list>
                 <field name="name"/>
                 <field name="description"/>
+                <field name="supervisor_id"/>
                 <field name="res_partner_id"/>
             </list>
         </field>
@@ -22,6 +23,7 @@
                         <group>
                             <field name="name"/>
                             <field name="description"/>
+                            <field name="supervisor_id"/>
                         </group>
                         <group>
                             <field name="res_partner_id"/>

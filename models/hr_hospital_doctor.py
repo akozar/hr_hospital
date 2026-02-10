@@ -14,6 +14,11 @@ class HRHDoctor(models.Model):
         default=True, )
     description = fields.Text()
 
+    supervisor_id = fields.Many2one(
+        comodel_name='hr.hospital.doctor',
+        string='Supervisor Doctor'
+    )
+
     res_partner_id = fields.Many2one(
         comodel_name='res.partner',
         string='Contact'

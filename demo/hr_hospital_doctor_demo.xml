@@ -6,9 +6,11 @@
     <record id="doctor_demo_2" model="hr.hospital.doctor">
         <field name="name">Dr. Olena Kovalenko</field>
         <field name="description">Therapist specializing in internal medicine</field>
+        <field name="supervisor_id" ref="doctor_demo_1"/>
     </record>
     <record id="doctor_demo_3" model="hr.hospital.doctor">
         <field name="name">Dr. Mykola Shevchenko</field>
         <field name="description">Pediatrician with expertise in child development</field>
+        <field name="supervisor_id" ref="doctor_demo_1"/>
     </record>
 </odoo>
