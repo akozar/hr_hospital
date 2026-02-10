@@ -1,18 +1,49 @@
 <odoo>
+    <!-- Parent diseases -->
+    <record id="osl_disease_behavioral" model="hr.hospital.disease">
+        <field name="name">Behavioral Disorders</field>
+        <field name="icd10_code">F00-F99</field>
+        <field name="description">Mental and behavioral disorders category</field>
+        <field name="danger_level">medium</field>
+        <field name="is_contagious" eval="False"/>
+    </record>
 
+    <record id="osl_disease_neurological" model="hr.hospital.disease">
+        <field name="name">Neurological Disorders</field>
+        <field name="icd10_code">G00-G99</field>
+        <field name="description">Diseases of the nervous system</field>
+        <field name="danger_level">high</field>
+        <field name="is_contagious" eval="False"/>
+    </record>
+
+    <!-- Child diseases -->
     <record id="osl_disease_1" model="hr.hospital.disease">
         <field name="name">Procrastinitis (Type B)</field>
+        <field name="icd10_code">F48.1</field>
         <field name="description">An irresistible urge to start recovery "next Monday" and organize spice racks instead of working.</field>
+        <field name="symptoms">Excessive planning, delayed action, sudden interest in cleaning, Netflix binging</field>
+        <field name="danger_level">low</field>
+        <field name="is_contagious" eval="True"/>
+        <field name="parent_id" ref="osl_disease_behavioral"/>
     </record>
 
     <record id="osl_disease_2" model="hr.hospital.disease">
         <field name="name">The "Reply-All" Rash</field>
+        <field name="icd10_code">F41.0</field>
         <field name="description">Extreme facial heat and panic following an accidental company-wide email blunder.</field>
+        <field name="symptoms">Facial redness, sweating, heart palpitations, urge to hide under desk</field>
+        <field name="danger_level">medium</field>
+        <field name="is_contagious" eval="False"/>
+        <field name="parent_id" ref="osl_disease_behavioral"/>
     </record>
 
     <record id="osl_disease_3" model="hr.hospital.disease">
         <field name="name">Sentient Elbow Syndrome</field>
+        <field name="icd10_code">G56.0</field>
         <field name="description">A condition where the funny bone develops its own personality, often resulting in involuntary jazz hands.</field>
+        <field name="symptoms">Involuntary arm movements, tingling sensations, spontaneous jazz hands</field>
+        <field name="danger_level">low</field>
+        <field name="is_contagious" eval="False"/>
+        <field name="parent_id" ref="osl_disease_neurological"/>
     </record>
-
 </odoo>
