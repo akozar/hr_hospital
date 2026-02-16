@@ -1,0 +1,86 @@
+<odoo>
+    <!-- Patient 1 - Bondarenko Anna - changed doctors twice -->
+    <record id="history_demo_1" model="hr.hospital.patient.doctor.history">
+        <field name="patient_id" ref="patient_demo_1"/>
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="date_start">2024-01-15</field>
+        <field name="date_end">2025-06-30</field>
+        <field name="reason">Initial assignment upon registration</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="history_demo_2" model="hr.hospital.patient.doctor.history">
+        <field name="patient_id" ref="patient_demo_1"/>
+        <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="date_start">2025-07-01</field>
+        <field name="reason">Transferred to surgical specialist for ongoing care</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <!-- Patient 2 - Lysenko Petro - changed doctors once -->
+    <record id="history_demo_3" model="hr.hospital.patient.doctor.history">
+        <field name="patient_id" ref="patient_demo_2"/>
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="date_start">2023-05-10</field>
+        <field name="date_end">2025-02-28</field>
+        <field name="reason">Initial assignment</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="history_demo_4" model="hr.hospital.patient.doctor.history">
+        <field name="patient_id" ref="patient_demo_2"/>
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="date_start">2025-03-01</field>
+        <field name="reason">Previous doctor on leave, reassigned</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <!-- Patient 7 - Didenko Olha - multiple doctor changes -->
+    <record id="history_demo_5" model="hr.hospital.patient.doctor.history">
+        <field name="patient_id" ref="patient_demo_7"/>
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="date_start">2022-11-01</field>
+        <field name="date_end">2024-03-15</field>
+        <field name="reason">Initial registration</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="history_demo_6" model="hr.hospital.patient.doctor.history">
+        <field name="patient_id" ref="patient_demo_7"/>
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="date_start">2024-03-16</field>
+        <field name="date_end">2025-08-31</field>
+        <field name="reason">Requested different internal medicine specialist</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="history_demo_7" model="hr.hospital.patient.doctor.history">
+        <field name="patient_id" ref="patient_demo_7"/>
+        <field name="doctor_id" ref="doctor_demo_5"/>
+        <field name="date_start">2025-09-01</field>
+        <field name="reason">Referred to neurologist for chronic migraines</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <!-- Patient 9 - Romanchuk Svitlana - single assignment -->
+    <record id="history_demo_8" model="hr.hospital.patient.doctor.history">
+        <field name="patient_id" ref="patient_demo_9"/>
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="date_start">2024-06-01</field>
+        <field name="reason">New patient registration for chronic disease management</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <!-- Patient 14 - Cherednychenko Valentyn - reassigned to intern for follow-up -->
+    <record id="history_demo_9" model="hr.hospital.patient.doctor.history">
+        <field name="patient_id" ref="patient_demo_14"/>
+        <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="date_start">2023-02-14</field>
+        <field name="date_end">2025-12-31</field>
+        <field name="reason">Initial cardiology consultation</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="history_demo_10" model="hr.hospital.patient.doctor.history">
+        <field name="patient_id" ref="patient_demo_14"/>
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="date_start">2026-01-01</field>
+        <field name="reason">Assigned to cardiology intern under mentor supervision</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

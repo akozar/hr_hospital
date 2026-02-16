@@ -1,0 +1,251 @@
+<odoo>
+    <!-- Doctor 1 - Petrenko (Surgery) - Mon-Fri 08:00-16:00 -->
+    <record id="schedule_demo_1_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="day_of_week">0</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">16.0</field>
+    </record>
+    <record id="schedule_demo_1_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="day_of_week">1</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">16.0</field>
+    </record>
+    <record id="schedule_demo_1_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="day_of_week">2</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">16.0</field>
+    </record>
+    <record id="schedule_demo_1_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="day_of_week">3</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">16.0</field>
+    </record>
+    <record id="schedule_demo_1_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="day_of_week">4</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">14.0</field>
+    </record>
+
+    <!-- Doctor 2 - Kovalenko (Internal Medicine) - Mon-Fri 09:00-17:00 -->
+    <record id="schedule_demo_2_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="day_of_week">0</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_2_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="day_of_week">1</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_2_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="day_of_week">2</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_2_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="day_of_week">3</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_2_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="day_of_week">4</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">15.0</field>
+    </record>
+
+    <!-- Doctor 3 - Shevchenko (Pediatrics) - Mon-Fri 08:30-16:30 -->
+    <record id="schedule_demo_3_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_3"/>
+        <field name="day_of_week">0</field>
+        <field name="time_from">8.5</field>
+        <field name="time_to">16.5</field>
+    </record>
+    <record id="schedule_demo_3_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_3"/>
+        <field name="day_of_week">1</field>
+        <field name="time_from">8.5</field>
+        <field name="time_to">16.5</field>
+    </record>
+    <record id="schedule_demo_3_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_3"/>
+        <field name="day_of_week">2</field>
+        <field name="time_from">8.5</field>
+        <field name="time_to">16.5</field>
+    </record>
+    <record id="schedule_demo_3_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_3"/>
+        <field name="day_of_week">3</field>
+        <field name="time_from">8.5</field>
+        <field name="time_to">16.5</field>
+    </record>
+    <record id="schedule_demo_3_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_3"/>
+        <field name="day_of_week">4</field>
+        <field name="time_from">8.5</field>
+        <field name="time_to">14.5</field>
+    </record>
+
+    <!-- Doctor 4 - Bondar (Cardiology Intern) - Mon-Fri 09:00-17:00 -->
+    <record id="schedule_demo_4_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="day_of_week">0</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_4_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="day_of_week">1</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_4_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="day_of_week">2</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_4_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="day_of_week">3</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_4_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="day_of_week">4</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+
+    <!-- Doctor 5 - Hryhorenko (Neurology) - Mon-Thu 10:00-18:00 -->
+    <record id="schedule_demo_5_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_5"/>
+        <field name="day_of_week">0</field>
+        <field name="time_from">10.0</field>
+        <field name="time_to">18.0</field>
+    </record>
+    <record id="schedule_demo_5_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_5"/>
+        <field name="day_of_week">1</field>
+        <field name="time_from">10.0</field>
+        <field name="time_to">18.0</field>
+    </record>
+    <record id="schedule_demo_5_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_5"/>
+        <field name="day_of_week">2</field>
+        <field name="time_from">10.0</field>
+        <field name="time_to">18.0</field>
+    </record>
+    <record id="schedule_demo_5_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_5"/>
+        <field name="day_of_week">3</field>
+        <field name="time_from">10.0</field>
+        <field name="time_to">18.0</field>
+    </record>
+
+    <!-- Doctor 6 - Savchenko (Surgery) - Tue-Sat 07:00-15:00 -->
+    <record id="schedule_demo_6_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_6"/>
+        <field name="day_of_week">1</field>
+        <field name="time_from">7.0</field>
+        <field name="time_to">15.0</field>
+    </record>
+    <record id="schedule_demo_6_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_6"/>
+        <field name="day_of_week">2</field>
+        <field name="time_from">7.0</field>
+        <field name="time_to">15.0</field>
+    </record>
+    <record id="schedule_demo_6_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_6"/>
+        <field name="day_of_week">3</field>
+        <field name="time_from">7.0</field>
+        <field name="time_to">15.0</field>
+    </record>
+    <record id="schedule_demo_6_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_6"/>
+        <field name="day_of_week">4</field>
+        <field name="time_from">7.0</field>
+        <field name="time_to">15.0</field>
+    </record>
+    <record id="schedule_demo_6_sat" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_6"/>
+        <field name="day_of_week">5</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">12.0</field>
+    </record>
+
+    <!-- Doctor 7 - Marchenko (Pediatrics Intern) - Mon-Fri 09:00-17:00 -->
+    <record id="schedule_demo_7_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_7"/>
+        <field name="day_of_week">0</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_7_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_7"/>
+        <field name="day_of_week">1</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_7_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_7"/>
+        <field name="day_of_week">2</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_7_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_7"/>
+        <field name="day_of_week">3</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+    <record id="schedule_demo_7_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_7"/>
+        <field name="day_of_week">4</field>
+        <field name="time_from">9.0</field>
+        <field name="time_to">17.0</field>
+    </record>
+
+    <!-- Doctor 8 - Koval (Internal Medicine) - Mon-Fri 08:00-16:00 -->
+    <record id="schedule_demo_8_mon" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="day_of_week">0</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">16.0</field>
+    </record>
+    <record id="schedule_demo_8_tue" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="day_of_week">1</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">16.0</field>
+    </record>
+    <record id="schedule_demo_8_wed" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="day_of_week">2</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">16.0</field>
+    </record>
+    <record id="schedule_demo_8_thu" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="day_of_week">3</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">16.0</field>
+    </record>
+    <record id="schedule_demo_8_fri" model="hr.hospital.doctor.schedule">
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="day_of_week">4</field>
+        <field name="time_from">8.0</field>
+        <field name="time_to">14.0</field>
+    </record>
+</odoo>

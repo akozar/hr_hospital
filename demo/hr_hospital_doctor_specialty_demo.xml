@@ -19,4 +19,9 @@
         <field name="code">CARD001</field>
         <field name="description">Heart and cardiovascular system disorders</field>
     </record>
+    <record id="specialty_demo_neurology" model="hr.hospital.doctor.specialty">
+        <field name="name">Neurology</field>
+        <field name="code">NEUR001</field>
+        <field name="description">Disorders of the nervous system including brain and spinal cord</field>
+    </record>
 </odoo>

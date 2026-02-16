@@ -40,5 +40,186 @@
         <field name="doctor_id" ref="doctor_demo_3"/>
         <field name="passport_data">EF345678</field>
         <field name="blood_group">b_pos</field>
+        <field name="contact_person_id" ref="contact_person_demo_3"/>
+    </record>
+    <record id="patient_demo_4" model="hr.hospital.patient">
+        <field name="surname">Kravets</field>
+        <field name="first_name">Volodymyr</field>
+        <field name="patronymic">Ivanovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1965-08-14</field>
+        <field name="phone">+380674567890</field>
+        <field name="email">volodymyr.kravets@gmail.com</field>
+        <field name="description">Cardiology patient with hypertension</field>
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="passport_data">GH901234</field>
+        <field name="blood_group">ab_pos</field>
+        <field name="allergies">Ibuprofen</field>
+        <field name="contact_person_id" ref="contact_person_demo_4"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+    <record id="patient_demo_5" model="hr.hospital.patient">
+        <field name="surname">Tymoshenko</field>
+        <field name="first_name">Yulia</field>
+        <field name="patronymic">Petrivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1988-03-22</field>
+        <field name="phone">+380675678901</field>
+        <field name="email">yulia.tymoshenko@gmail.com</field>
+        <field name="description">Regular checkup patient</field>
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="passport_data">IJ567890</field>
+        <field name="blood_group">o_pos</field>
+        <field name="contact_person_id" ref="contact_person_demo_5"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+    <record id="patient_demo_6" model="hr.hospital.patient">
+        <field name="surname">Horobets</field>
+        <field name="first_name">Maksym</field>
+        <field name="patronymic">Oleksiyovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">2018-11-05</field>
+        <field name="phone">+380676789012</field>
+        <field name="email">horobets.family@gmail.com</field>
+        <field name="description">Pediatric patient</field>
+        <field name="doctor_id" ref="doctor_demo_7"/>
+        <field name="passport_data">KL123456</field>
+        <field name="blood_group">a_neg</field>
+        <field name="contact_person_id" ref="contact_person_demo_6"/>
+    </record>
+    <record id="patient_demo_7" model="hr.hospital.patient">
+        <field name="surname">Didenko</field>
+        <field name="first_name">Olha</field>
+        <field name="patronymic">Serhiivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1975-06-30</field>
+        <field name="phone">+380677890123</field>
+        <field name="email">olha.didenko@ukr.net</field>
+        <field name="description">Neurological patient with migraines</field>
+        <field name="doctor_id" ref="doctor_demo_5"/>
+        <field name="passport_data">MN789012</field>
+        <field name="blood_group">b_neg</field>
+        <field name="allergies">Latex, Sulfa drugs</field>
+        <field name="contact_person_id" ref="contact_person_demo_7"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+    <record id="patient_demo_8" model="hr.hospital.patient">
+        <field name="surname">Zinchenko</field>
+        <field name="first_name">Artem</field>
+        <field name="patronymic">Viktorovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1992-01-17</field>
+        <field name="phone">+380678901234</field>
+        <field name="email">artem.zinchenko@gmail.com</field>
+        <field name="description">Post-surgery recovery patient</field>
+        <field name="doctor_id" ref="doctor_demo_6"/>
+        <field name="passport_data">OP345678</field>
+        <field name="blood_group">ab_neg</field>
+        <field name="contact_person_id" ref="contact_person_demo_8"/>
+    </record>
+    <record id="patient_demo_9" model="hr.hospital.patient">
+        <field name="surname">Romanchuk</field>
+        <field name="first_name">Svitlana</field>
+        <field name="patronymic">Andriivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1958-04-09</field>
+        <field name="phone">+380679012345</field>
+        <field name="email">svitlana.romanchuk@ukr.net</field>
+        <field name="description">Chronic disease management</field>
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="passport_data">QR901234</field>
+        <field name="blood_group">o_neg</field>
+        <field name="allergies">Codeine</field>
+        <field name="contact_person_id" ref="contact_person_demo_9"/>
+        <field name="country_id" ref="base.pl"/>
+    </record>
+    <record id="patient_demo_10" model="hr.hospital.patient">
+        <field name="surname">Fedorenko</field>
+        <field name="first_name">Denys</field>
+        <field name="patronymic">Mykolayovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">2010-07-23</field>
+        <field name="phone">+380670123456</field>
+        <field name="email">fedorenko.family@gmail.com</field>
+        <field name="description">Pediatric patient with allergies</field>
+        <field name="doctor_id" ref="doctor_demo_3"/>
+        <field name="passport_data">ST567890</field>
+        <field name="blood_group">a_pos</field>
+        <field name="allergies">Peanuts, Tree nuts</field>
+        <field name="contact_person_id" ref="contact_person_demo_10"/>
+    </record>
+    <record id="patient_demo_11" model="hr.hospital.patient">
+        <field name="surname">Hordiienko</field>
+        <field name="first_name">Lidia</field>
+        <field name="patronymic">Borysivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1970-09-12</field>
+        <field name="phone">+380671234560</field>
+        <field name="email">lidia.hordiienko@ukr.net</field>
+        <field name="description">Internal medicine patient</field>
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="passport_data">UV123456</field>
+        <field name="blood_group">b_pos</field>
+        <field name="contact_person_id" ref="contact_person_demo_11"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+    <record id="patient_demo_12" model="hr.hospital.patient">
+        <field name="surname">Yurchenko</field>
+        <field name="first_name">Ihor</field>
+        <field name="patronymic">Stepanovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1983-12-01</field>
+        <field name="phone">+380672345601</field>
+        <field name="email">ihor.yurchenko@gmail.com</field>
+        <field name="description">Surgical consultation patient</field>
+        <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="passport_data">WX789012</field>
+        <field name="blood_group">o_pos</field>
+        <field name="contact_person_id" ref="contact_person_demo_12"/>
+    </record>
+    <record id="patient_demo_13" model="hr.hospital.patient">
+        <field name="surname">Solovey</field>
+        <field name="first_name">Mariia</field>
+        <field name="patronymic">Ivanivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1995-05-18</field>
+        <field name="phone">+380673456012</field>
+        <field name="email">mariia.solovey@gmail.com</field>
+        <field name="description">Young adult patient</field>
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="passport_data">YZ345678</field>
+        <field name="blood_group">a_neg</field>
+        <field name="contact_person_id" ref="contact_person_demo_13"/>
+        <field name="country_id" ref="base.de"/>
+    </record>
+    <record id="patient_demo_14" model="hr.hospital.patient">
+        <field name="surname">Cherednychenko</field>
+        <field name="first_name">Valentyn</field>
+        <field name="patronymic">Olehovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1962-02-14</field>
+        <field name="phone">+380674567012</field>
+        <field name="email">valentyn.cherednychenko@ukr.net</field>
+        <field name="description">Cardiology patient</field>
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="passport_data">AB901234</field>
+        <field name="blood_group">ab_pos</field>
+        <field name="allergies">Aspirin, NSAIDs</field>
+        <field name="contact_person_id" ref="contact_person_demo_14"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+    <record id="patient_demo_15" model="hr.hospital.patient">
+        <field name="surname">Nazarenko</field>
+        <field name="first_name">Daryna</field>
+        <field name="patronymic">Vasylivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">2020-10-25</field>
+        <field name="phone">+380675678012</field>
+        <field name="email">nazarenko.family@gmail.com</field>
+        <field name="description">Infant patient</field>
+        <field name="doctor_id" ref="doctor_demo_7"/>
+        <field name="passport_data">CD567890</field>
+        <field name="blood_group">o_pos</field>
+        <field name="contact_person_id" ref="contact_person_demo_15"/>
     </record>
 </odoo>

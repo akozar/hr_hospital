@@ -12,6 +12,7 @@
         <field name="license_number">LIC-001-2010</field>
         <field name="license_date">2010-06-15</field>
         <field name="rating">4.85</field>
+        <field name="user_id">2</field>
         <field name="is_intern" eval="False"/>
     </record>
     <record id="doctor_demo_2" model="hr.hospital.doctor">
@@ -61,5 +62,66 @@
         <field name="rating">4.00</field>
         <field name="is_intern" eval="True"/>
         <field name="mentor_id" ref="doctor_demo_1"/>
+    </record>
+    <record id="doctor_demo_5" model="hr.hospital.doctor">
+        <field name="surname">Hryhorenko</field>
+        <field name="first_name">Viktoria</field>
+        <field name="patronymic">Andriivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1980-06-18</field>
+        <field name="phone">+380505678901</field>
+        <field name="email">viktoria.hryhorenko@hospital.ua</field>
+        <field name="description">Senior neurologist with expertise in headache disorders</field>
+        <field name="specialty_id" ref="specialty_demo_neurology"/>
+        <field name="license_number">LIC-005-2008</field>
+        <field name="license_date">2008-11-20</field>
+        <field name="rating">4.90</field>
+        <field name="is_intern" eval="False"/>
+    </record>
+    <record id="doctor_demo_6" model="hr.hospital.doctor">
+        <field name="surname">Savchenko</field>
+        <field name="first_name">Dmytro</field>
+        <field name="patronymic">Olehovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1979-02-25</field>
+        <field name="phone">+380506789012</field>
+        <field name="email">dmytro.savchenko@hospital.ua</field>
+        <field name="description">Experienced surgeon specializing in minimally invasive procedures</field>
+        <field name="specialty_id" ref="specialty_demo_surgery"/>
+        <field name="license_number">LIC-006-2007</field>
+        <field name="license_date">2007-05-15</field>
+        <field name="rating">4.70</field>
+        <field name="is_intern" eval="False"/>
+    </record>
+    <record id="doctor_demo_7" model="hr.hospital.doctor">
+        <field name="surname">Marchenko</field>
+        <field name="first_name">Yulia</field>
+        <field name="patronymic">Serhiivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1996-08-12</field>
+        <field name="phone">+380507890123</field>
+        <field name="email">yulia.marchenko@hospital.ua</field>
+        <field name="description">Medical intern in pediatrics</field>
+        <field name="specialty_id" ref="specialty_demo_pediatrics"/>
+        <field name="license_number">LIC-007-2024</field>
+        <field name="license_date">2024-03-01</field>
+        <field name="rating">3.80</field>
+        <field name="is_intern" eval="True"/>
+        <field name="mentor_id" ref="doctor_demo_3"/>
+    </record>
+    <record id="doctor_demo_8" model="hr.hospital.doctor">
+        <field name="surname">Koval</field>
+        <field name="first_name">Roman</field>
+        <field name="patronymic">Yuriyovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1985-12-03</field>
+        <field name="phone">+380508901234</field>
+        <field name="email">roman.koval@hospital.ua</field>
+        <field name="description">Internal medicine specialist with focus on chronic diseases</field>
+        <field name="specialty_id" ref="specialty_demo_therapy"/>
+        <field name="license_number">LIC-008-2013</field>
+        <field name="license_date">2013-09-10</field>
+        <field name="rating">4.55</field>
+        <field name="is_intern" eval="False"/>
     </record>
 </odoo>

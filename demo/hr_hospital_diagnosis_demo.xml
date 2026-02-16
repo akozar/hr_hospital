@@ -1,0 +1,201 @@
+<odoo>
+    <!-- Approved diagnoses from regular doctors -->
+    <record id="diagnosis_demo_1" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_1"/>
+        <field name="disease_id" ref="osl_disease_1"/>
+        <field name="description">Mild procrastination symptoms observed</field>
+        <field name="treatment">&lt;p&gt;Recommended: Task scheduling app and coffee breaks&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_1"/>
+        <field name="approval_date">2026-02-10 09:30:00</field>
+    </record>
+    <record id="diagnosis_demo_2" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_2"/>
+        <field name="disease_id" ref="osl_disease_2"/>
+        <field name="description">Reply-all incident stress reaction</field>
+        <field name="treatment">&lt;p&gt;Email training session recommended. Avoid caffeine before sending emails.&lt;/p&gt;</field>
+        <field name="severity">moderate</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_2"/>
+        <field name="approval_date">2026-02-10 11:00:00</field>
+    </record>
+    <record id="diagnosis_demo_3" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_3"/>
+        <field name="disease_id" ref="osl_disease_3"/>
+        <field name="description">Mild elbow tingling during school hours</field>
+        <field name="treatment">&lt;p&gt;Arm stretches twice daily. Follow-up in 2 weeks.&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_3"/>
+        <field name="approval_date">2026-02-10 14:30:00</field>
+    </record>
+    <record id="diagnosis_demo_4" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_7"/>
+        <field name="disease_id" ref="osl_disease_4"/>
+        <field name="description">Common cold with mild symptoms</field>
+        <field name="treatment">&lt;p&gt;Rest, fluids, vitamin C. OTC medication for symptoms.&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_2"/>
+        <field name="approval_date">2026-02-06 12:00:00</field>
+    </record>
+    <record id="diagnosis_demo_5" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_9"/>
+        <field name="disease_id" ref="osl_disease_8"/>
+        <field name="description">Chronic migraine with aura</field>
+        <field name="treatment">&lt;p&gt;Preventive medication prescribed. Avoid triggers: bright lights, stress.&lt;/p&gt;</field>
+        <field name="severity">moderate</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_5"/>
+        <field name="approval_date">2026-02-07 14:45:00</field>
+    </record>
+    <record id="diagnosis_demo_6" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_10"/>
+        <field name="disease_id" ref="osl_disease_1"/>
+        <field name="description">Post-surgery recovery on track</field>
+        <field name="treatment">&lt;p&gt;Continue physical therapy. Pain management as needed.&lt;/p&gt;</field>
+        <field name="severity">moderate</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_6"/>
+        <field name="approval_date">2026-02-08 11:00:00</field>
+    </record>
+    <record id="diagnosis_demo_7" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_11"/>
+        <field name="disease_id" ref="osl_disease_2"/>
+        <field name="description">Workplace stress manifestation</field>
+        <field name="treatment">&lt;p&gt;Stress management counseling. Consider work-life balance adjustments.&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_8"/>
+        <field name="approval_date">2026-02-08 15:30:00</field>
+    </record>
+    <record id="diagnosis_demo_8" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_12"/>
+        <field name="disease_id" ref="osl_disease_5"/>
+        <field name="description">Acute bronchitis requiring immediate attention</field>
+        <field name="treatment">&lt;p&gt;Antibiotics prescribed. Inhaler for wheezing. Rest for 1 week.&lt;/p&gt;</field>
+        <field name="severity">severe</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_3"/>
+        <field name="approval_date">2026-02-09 11:30:00</field>
+    </record>
+
+    <!-- Unapproved diagnoses from intern doctor_demo_4 (cardiology) -->
+    <record id="diagnosis_demo_9" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_6"/>
+        <field name="disease_id" ref="osl_disease_6"/>
+        <field name="description">Initial hypertension diagnosis - blood pressure 150/95</field>
+        <field name="treatment">&lt;p&gt;Lifestyle modifications recommended. BP monitoring daily.&lt;/p&gt;</field>
+        <field name="severity">moderate</field>
+        <field name="is_approved" eval="False"/>
+    </record>
+    <record id="diagnosis_demo_10" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_6"/>
+        <field name="disease_id" ref="osl_disease_7"/>
+        <field name="description">Suspected arrhythmia - ECG shows irregularities</field>
+        <field name="treatment">&lt;p&gt;Holter monitor recommended. Cardiology follow-up in 1 week.&lt;/p&gt;</field>
+        <field name="severity">critical</field>
+        <field name="is_approved" eval="False"/>
+    </record>
+
+    <!-- Unapproved diagnoses from intern doctor_demo_7 (pediatrics) -->
+    <record id="diagnosis_demo_11" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_8"/>
+        <field name="disease_id" ref="osl_disease_9"/>
+        <field name="description">Childhood asthma symptoms during physical activity</field>
+        <field name="treatment">&lt;p&gt;Rescue inhaler prescribed. Avoid strenuous exercise.&lt;/p&gt;</field>
+        <field name="severity">moderate</field>
+        <field name="is_approved" eval="False"/>
+    </record>
+    <record id="diagnosis_demo_12" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_8"/>
+        <field name="disease_id" ref="osl_disease_4"/>
+        <field name="description">Concurrent cold symptoms</field>
+        <field name="treatment">&lt;p&gt;Supportive care. Monitor for worsening.&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="False"/>
+    </record>
+
+    <!-- Additional approved diagnoses -->
+    <record id="diagnosis_demo_13" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_1"/>
+        <field name="disease_id" ref="osl_disease_2"/>
+        <field name="description">Secondary finding - work-related stress</field>
+        <field name="treatment">&lt;p&gt;Relaxation techniques recommended.&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_1"/>
+        <field name="approval_date">2026-02-10 09:45:00</field>
+    </record>
+    <record id="diagnosis_demo_14" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_9"/>
+        <field name="disease_id" ref="osl_disease_3"/>
+        <field name="description">Associated neurological symptoms</field>
+        <field name="treatment">&lt;p&gt;Nerve conduction study if symptoms persist.&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_5"/>
+        <field name="approval_date">2026-02-07 15:00:00</field>
+    </record>
+    <record id="diagnosis_demo_15" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_7"/>
+        <field name="disease_id" ref="osl_disease_5"/>
+        <field name="description">Developing bronchitis from cold</field>
+        <field name="treatment">&lt;p&gt;Monitoring required. Return if cough worsens.&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_2"/>
+        <field name="approval_date">2026-02-06 12:15:00</field>
+    </record>
+
+    <!-- More unapproved from interns -->
+    <record id="diagnosis_demo_16" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_6"/>
+        <field name="disease_id" ref="osl_disease_1"/>
+        <field name="description">Patient shows procrastination in taking medication</field>
+        <field name="treatment">&lt;p&gt;Medication reminder app suggested.&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="False"/>
+    </record>
+    <record id="diagnosis_demo_17" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_8"/>
+        <field name="disease_id" ref="osl_disease_3"/>
+        <field name="description">Mild tingling in extremities</field>
+        <field name="treatment">&lt;p&gt;B-vitamin supplementation recommended.&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="False"/>
+    </record>
+
+    <!-- Final approved diagnoses -->
+    <record id="diagnosis_demo_18" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_10"/>
+        <field name="disease_id" ref="osl_disease_6"/>
+        <field name="description">Post-operative blood pressure elevated</field>
+        <field name="treatment">&lt;p&gt;Continue monitoring. Adjust medication if needed.&lt;/p&gt;</field>
+        <field name="severity">moderate</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_6"/>
+        <field name="approval_date">2026-02-08 11:15:00</field>
+    </record>
+    <record id="diagnosis_demo_19" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_11"/>
+        <field name="disease_id" ref="osl_disease_1"/>
+        <field name="description">Chronic procrastination affecting daily life</field>
+        <field name="treatment">&lt;p&gt;Cognitive behavioral therapy referral.&lt;/p&gt;</field>
+        <field name="severity">mild</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_8"/>
+        <field name="approval_date">2026-02-08 15:45:00</field>
+    </record>
+    <record id="diagnosis_demo_20" model="hr.hospital.diagnosis">
+        <field name="visit_id" ref="patient_visit_demo_12"/>
+        <field name="disease_id" ref="osl_disease_4"/>
+        <field name="description">Underlying cold triggered bronchitis</field>
+        <field name="treatment">&lt;p&gt;Complete antibiotic course. Hydration essential.&lt;/p&gt;</field>
+        <field name="severity">moderate</field>
+        <field name="is_approved" eval="True"/>
+        <field name="approved_by_id" ref="doctor_demo_3"/>
+        <field name="approval_date">2026-02-09 11:45:00</field>
+    </record>
+</odoo>

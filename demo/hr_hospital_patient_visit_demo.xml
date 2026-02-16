@@ -47,4 +47,182 @@
         <field name="state">scheduled</field>
         <field name="cost">750.00</field>
     </record>
+    <!-- Additional done visits -->
+    <record id="patient_visit_demo_6" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-05 10:00:00</field>
+        <field name="patient_id" ref="patient_demo_4"/>
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="disease_id" ref="osl_disease_6"/>
+        <field name="visit_type">primary</field>
+        <field name="state">done</field>
+        <field name="actual_time">2026-02-05 10:10:00</field>
+        <field name="cost">450.00</field>
+    </record>
+    <record id="patient_visit_demo_7" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-06 11:30:00</field>
+        <field name="patient_id" ref="patient_demo_5"/>
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="disease_id" ref="osl_disease_4"/>
+        <field name="visit_type">primary</field>
+        <field name="state">done</field>
+        <field name="actual_time">2026-02-06 11:35:00</field>
+        <field name="cost">350.00</field>
+    </record>
+    <record id="patient_visit_demo_8" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-07 09:00:00</field>
+        <field name="patient_id" ref="patient_demo_6"/>
+        <field name="doctor_id" ref="doctor_demo_7"/>
+        <field name="disease_id" ref="osl_disease_9"/>
+        <field name="visit_type">primary</field>
+        <field name="state">done</field>
+        <field name="actual_time">2026-02-07 09:05:00</field>
+        <field name="cost">400.00</field>
+    </record>
+    <record id="patient_visit_demo_9" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-07 14:00:00</field>
+        <field name="patient_id" ref="patient_demo_7"/>
+        <field name="doctor_id" ref="doctor_demo_5"/>
+        <field name="disease_id" ref="osl_disease_8"/>
+        <field name="visit_type">follow_up</field>
+        <field name="state">done</field>
+        <field name="actual_time">2026-02-07 14:00:00</field>
+        <field name="cost">500.00</field>
+    </record>
+    <record id="patient_visit_demo_10" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-08 10:30:00</field>
+        <field name="patient_id" ref="patient_demo_8"/>
+        <field name="doctor_id" ref="doctor_demo_6"/>
+        <field name="disease_id" ref="osl_disease_1"/>
+        <field name="visit_type">follow_up</field>
+        <field name="state">done</field>
+        <field name="actual_time">2026-02-08 10:40:00</field>
+        <field name="cost">600.00</field>
+    </record>
+    <record id="patient_visit_demo_11" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-08 15:00:00</field>
+        <field name="patient_id" ref="patient_demo_9"/>
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="disease_id" ref="osl_disease_2"/>
+        <field name="visit_type">primary</field>
+        <field name="state">done</field>
+        <field name="actual_time">2026-02-08 15:05:00</field>
+        <field name="cost">380.00</field>
+    </record>
+    <record id="patient_visit_demo_12" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-09 11:00:00</field>
+        <field name="patient_id" ref="patient_demo_10"/>
+        <field name="doctor_id" ref="doctor_demo_3"/>
+        <field name="disease_id" ref="osl_disease_5"/>
+        <field name="visit_type">emergency</field>
+        <field name="state">done</field>
+        <field name="actual_time">2026-02-09 11:00:00</field>
+        <field name="cost">700.00</field>
+    </record>
+    <!-- Cancelled visits -->
+    <record id="patient_visit_demo_13" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-10 16:00:00</field>
+        <field name="patient_id" ref="patient_demo_11"/>
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="visit_type">follow_up</field>
+        <field name="state">cancelled</field>
+        <field name="cost">350.00</field>
+    </record>
+    <record id="patient_visit_demo_14" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-11 09:30:00</field>
+        <field name="patient_id" ref="patient_demo_12"/>
+        <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="visit_type">primary</field>
+        <field name="state">cancelled</field>
+        <field name="cost">500.00</field>
+    </record>
+    <record id="patient_visit_demo_15" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-12 10:00:00</field>
+        <field name="patient_id" ref="patient_demo_13"/>
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="visit_type">preventive</field>
+        <field name="state">cancelled</field>
+        <field name="cost">300.00</field>
+    </record>
+    <record id="patient_visit_demo_16" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-13 14:00:00</field>
+        <field name="patient_id" ref="patient_demo_14"/>
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="visit_type">follow_up</field>
+        <field name="state">cancelled</field>
+        <field name="cost">450.00</field>
+    </record>
+    <!-- No show visits -->
+    <record id="patient_visit_demo_17" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-09 09:00:00</field>
+        <field name="patient_id" ref="patient_demo_4"/>
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="visit_type">follow_up</field>
+        <field name="state">no_show</field>
+        <field name="cost">450.00</field>
+    </record>
+    <record id="patient_visit_demo_18" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-10 11:00:00</field>
+        <field name="patient_id" ref="patient_demo_7"/>
+        <field name="doctor_id" ref="doctor_demo_5"/>
+        <field name="visit_type">follow_up</field>
+        <field name="state">no_show</field>
+        <field name="cost">500.00</field>
+    </record>
+    <record id="patient_visit_demo_19" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-11 15:00:00</field>
+        <field name="patient_id" ref="patient_demo_15"/>
+        <field name="doctor_id" ref="doctor_demo_7"/>
+        <field name="visit_type">preventive</field>
+        <field name="state">no_show</field>
+        <field name="cost">350.00</field>
+    </record>
+    <!-- Scheduled visits -->
+    <record id="patient_visit_demo_20" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-17 09:00:00</field>
+        <field name="patient_id" ref="patient_demo_4"/>
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="visit_type">follow_up</field>
+        <field name="state">scheduled</field>
+        <field name="cost">450.00</field>
+    </record>
+    <record id="patient_visit_demo_21" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-17 10:30:00</field>
+        <field name="patient_id" ref="patient_demo_7"/>
+        <field name="doctor_id" ref="doctor_demo_5"/>
+        <field name="visit_type">follow_up</field>
+        <field name="state">scheduled</field>
+        <field name="cost">500.00</field>
+    </record>
+    <record id="patient_visit_demo_22" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-18 11:00:00</field>
+        <field name="patient_id" ref="patient_demo_11"/>
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="visit_type">preventive</field>
+        <field name="state">scheduled</field>
+        <field name="cost">320.00</field>
+    </record>
+    <record id="patient_visit_demo_23" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-18 14:00:00</field>
+        <field name="patient_id" ref="patient_demo_12"/>
+        <field name="doctor_id" ref="doctor_demo_6"/>
+        <field name="visit_type">primary</field>
+        <field name="state">scheduled</field>
+        <field name="cost">550.00</field>
+    </record>
+    <record id="patient_visit_demo_24" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-19 09:30:00</field>
+        <field name="patient_id" ref="patient_demo_13"/>
+        <field name="doctor_id" ref="doctor_demo_8"/>
+        <field name="visit_type">follow_up</field>
+        <field name="state">scheduled</field>
+        <field name="cost">380.00</field>
+    </record>
+    <record id="patient_visit_demo_25" model="hr.hospital.patient.visit">
+        <field name="scheduled_time">2026-02-19 15:00:00</field>
+        <field name="patient_id" ref="patient_demo_14"/>
+        <field name="doctor_id" ref="doctor_demo_4"/>
+        <field name="visit_type">emergency</field>
+        <field name="state">scheduled</field>
+        <field name="cost">800.00</field>
+    </record>
 </odoo>

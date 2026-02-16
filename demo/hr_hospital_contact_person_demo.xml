@@ -17,4 +17,121 @@
         <field name="phone">+380682223344</field>
         <field name="email">oleksiy.kravchuk@ukr.net</field>
     </record>
+    <record id="contact_person_demo_3" model="hr.hospital.contact.person">
+        <field name="surname">Pavlenko</field>
+        <field name="first_name">Iryna</field>
+        <field name="patronymic">Mykolaiivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1968-03-15</field>
+        <field name="phone">+380683334455</field>
+        <field name="email">iryna.pavlenko@gmail.com</field>
+    </record>
+    <record id="contact_person_demo_4" model="hr.hospital.contact.person">
+        <field name="surname">Moroz</field>
+        <field name="first_name">Vasyl</field>
+        <field name="patronymic">Petrovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1975-07-22</field>
+        <field name="phone">+380684445566</field>
+        <field name="email">vasyl.moroz@ukr.net</field>
+    </record>
+    <record id="contact_person_demo_5" model="hr.hospital.contact.person">
+        <field name="surname">Sydorenko</field>
+        <field name="first_name">Halyna</field>
+        <field name="patronymic">Ivanivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1980-11-08</field>
+        <field name="phone">+380685556677</field>
+        <field name="email">halyna.sydorenko@gmail.com</field>
+    </record>
+    <record id="contact_person_demo_6" model="hr.hospital.contact.person">
+        <field name="surname">Rudenko</field>
+        <field name="first_name">Anatoliy</field>
+        <field name="patronymic">Serhiyovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1965-05-30</field>
+        <field name="phone">+380686667788</field>
+        <field name="email">anatoliy.rudenko@ukr.net</field>
+    </record>
+    <record id="contact_person_demo_7" model="hr.hospital.contact.person">
+        <field name="surname">Polishchuk</field>
+        <field name="first_name">Tetiana</field>
+        <field name="patronymic">Oleksandrivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1978-09-14</field>
+        <field name="phone">+380687778899</field>
+        <field name="email">tetiana.polishchuk@gmail.com</field>
+    </record>
+    <record id="contact_person_demo_8" model="hr.hospital.contact.person">
+        <field name="surname">Hnatenko</field>
+        <field name="first_name">Bohdan</field>
+        <field name="patronymic">Volodymyrovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1970-01-25</field>
+        <field name="phone">+380688889900</field>
+        <field name="email">bohdan.hnatenko@ukr.net</field>
+    </record>
+    <record id="contact_person_demo_9" model="hr.hospital.contact.person">
+        <field name="surname">Kolomiyets</field>
+        <field name="first_name">Svitlana</field>
+        <field name="patronymic">Yaroslavivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1982-06-18</field>
+        <field name="phone">+380689990011</field>
+        <field name="email">svitlana.kolomiyets@gmail.com</field>
+    </record>
+    <record id="contact_person_demo_10" model="hr.hospital.contact.person">
+        <field name="surname">Humeniuk</field>
+        <field name="first_name">Mykhailo</field>
+        <field name="patronymic">Andriiovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1973-04-02</field>
+        <field name="phone">+380690001122</field>
+        <field name="email">mykhailo.humeniuk@ukr.net</field>
+    </record>
+    <record id="contact_person_demo_11" model="hr.hospital.contact.person">
+        <field name="surname">Zaytseva</field>
+        <field name="first_name">Liudmyla</field>
+        <field name="patronymic">Borysivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1976-12-11</field>
+        <field name="phone">+380691112233</field>
+        <field name="email">liudmyla.zaytseva@gmail.com</field>
+    </record>
+    <record id="contact_person_demo_12" model="hr.hospital.contact.person">
+        <field name="surname">Prykhodko</field>
+        <field name="first_name">Oleh</field>
+        <field name="patronymic">Hryhorovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1969-08-07</field>
+        <field name="phone">+380692223344</field>
+        <field name="email">oleh.prykhodko@ukr.net</field>
+    </record>
+    <record id="contact_person_demo_13" model="hr.hospital.contact.person">
+        <field name="surname">Vlasenko</field>
+        <field name="first_name">Kateryna</field>
+        <field name="patronymic">Dmytrivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1984-02-28</field>
+        <field name="phone">+380693334455</field>
+        <field name="email">kateryna.vlasenko@gmail.com</field>
+    </record>
+    <record id="contact_person_demo_14" model="hr.hospital.contact.person">
+        <field name="surname">Oliynyk</field>
+        <field name="first_name">Taras</field>
+        <field name="patronymic">Mykolayovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1971-10-19</field>
+        <field name="phone">+380694445566</field>
+        <field name="email">taras.oliynyk@ukr.net</field>
+    </record>
+    <record id="contact_person_demo_15" model="hr.hospital.contact.person">
+        <field name="surname">Boyko</field>
+        <field name="first_name">Nadiya</field>
+        <field name="patronymic">Vasylivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1979-05-05</field>
+        <field name="phone">+380695556677</field>
+        <field name="email">nadiya.boyko@gmail.com</field>
+    </record>
 </odoo>

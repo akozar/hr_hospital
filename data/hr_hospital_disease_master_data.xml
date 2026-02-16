@@ -46,4 +46,85 @@
         <field name="is_contagious" eval="False"/>
         <field name="parent_id" ref="osl_disease_neurological"/>
     </record>
+
+    <!-- Respiratory Diseases Category (parent) -->
+    <record id="osl_disease_respiratory" model="hr.hospital.disease">
+        <field name="name">Respiratory Diseases</field>
+        <field name="icd10_code">J00-J99</field>
+        <field name="description">Diseases of the respiratory system</field>
+        <field name="danger_level">medium</field>
+        <field name="is_contagious" eval="True"/>
+    </record>
+
+    <record id="osl_disease_4" model="hr.hospital.disease">
+        <field name="name">Common Cold</field>
+        <field name="icd10_code">J00</field>
+        <field name="description">Viral infectious disease of the upper respiratory tract</field>
+        <field name="symptoms">Runny nose, sneezing, sore throat, mild fever</field>
+        <field name="danger_level">low</field>
+        <field name="is_contagious" eval="True"/>
+        <field name="parent_id" ref="osl_disease_respiratory"/>
+        <field name="region_ids" eval="[(6, 0, [ref('base.ua'), ref('base.pl'), ref('base.de')])]"/>
+    </record>
+
+    <record id="osl_disease_5" model="hr.hospital.disease">
+        <field name="name">Acute Bronchitis</field>
+        <field name="icd10_code">J20</field>
+        <field name="description">Inflammation of the bronchi in the lungs</field>
+        <field name="symptoms">Cough with mucus, chest discomfort, fatigue, mild fever</field>
+        <field name="danger_level">medium</field>
+        <field name="is_contagious" eval="True"/>
+        <field name="parent_id" ref="osl_disease_respiratory"/>
+        <field name="region_ids" eval="[(6, 0, [ref('base.ua'), ref('base.pl')])]"/>
+    </record>
+
+    <!-- Cardiovascular Diseases Category (parent) -->
+    <record id="osl_disease_cardiovascular" model="hr.hospital.disease">
+        <field name="name">Cardiovascular Diseases</field>
+        <field name="icd10_code">I00-I99</field>
+        <field name="description">Diseases of the circulatory system</field>
+        <field name="danger_level">high</field>
+        <field name="is_contagious" eval="False"/>
+    </record>
+
+    <record id="osl_disease_6" model="hr.hospital.disease">
+        <field name="name">Essential Hypertension</field>
+        <field name="icd10_code">I10</field>
+        <field name="description">Primary high blood pressure without identifiable cause</field>
+        <field name="symptoms">Headache, shortness of breath, nosebleeds, dizziness</field>
+        <field name="danger_level">high</field>
+        <field name="is_contagious" eval="False"/>
+        <field name="parent_id" ref="osl_disease_cardiovascular"/>
+    </record>
+
+    <record id="osl_disease_7" model="hr.hospital.disease">
+        <field name="name">Cardiac Arrhythmia</field>
+        <field name="icd10_code">I49</field>
+        <field name="description">Irregular heartbeat patterns</field>
+        <field name="symptoms">Palpitations, dizziness, shortness of breath, chest discomfort</field>
+        <field name="danger_level">critical</field>
+        <field name="is_contagious" eval="False"/>
+        <field name="parent_id" ref="osl_disease_cardiovascular"/>
+    </record>
+
+    <!-- Additional specific diseases -->
+    <record id="osl_disease_8" model="hr.hospital.disease">
+        <field name="name">Chronic Migraine</field>
+        <field name="icd10_code">G43.7</field>
+        <field name="description">Recurring severe headaches with associated symptoms</field>
+        <field name="symptoms">Severe headache, nausea, light sensitivity, visual disturbances</field>
+        <field name="danger_level">medium</field>
+        <field name="is_contagious" eval="False"/>
+        <field name="parent_id" ref="osl_disease_neurological"/>
+    </record>
+
+    <record id="osl_disease_9" model="hr.hospital.disease">
+        <field name="name">Childhood Asthma</field>
+        <field name="icd10_code">J45.2</field>
+        <field name="description">Chronic respiratory condition common in children</field>
+        <field name="symptoms">Wheezing, coughing, shortness of breath, chest tightness</field>
+        <field name="danger_level">medium</field>
+        <field name="is_contagious" eval="False"/>
+        <field name="parent_id" ref="osl_disease_respiratory"/>
+    </record>
 </odoo>
