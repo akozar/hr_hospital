@@ -1,4 +1,5 @@
 import logging
+from datetime import timedelta
 
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
@@ -15,10 +16,18 @@ class HRHDiagnosis(models.Model):
         string='Visit',
         required=True,
         ondelete='cascade',
+        domain=lambda self: [
+            ('state', '=', 'done'),
+            ('scheduled_time', '>=', fields.Datetime.now() - timedelta(days=30)),
+        ],
     )
     disease_id = fields.Many2one(
         comodel_name='hr.hospital.disease',
         string='Disease',
+        domain=[
+            ('is_contagious', '=', True),
+            ('danger_level', 'in', ['high', 'critical']),
+        ],
     )
     description = fields.Text(string='Diagnosis Description')
     treatment = fields.Html(string='Prescribed Treatment')

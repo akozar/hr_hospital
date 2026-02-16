@@ -19,6 +19,7 @@ class HRHDoctorSchedule(models.Model):
         string='Doctor',
         required=True,
         ondelete='cascade',
+        domain=[('specialty_id', '!=', False)],
     )
     day_of_week = fields.Selection(
         selection=[

@@ -26,6 +26,7 @@ class HRHPatientVisit(models.Model):
         comodel_name='hr.hospital.doctor',
         string='Doctor',
         required=True,
+        domain=[('license_number', '!=', False)],
     )
     patient_id = fields.Many2one(
         comodel_name='hr.hospital.patient',
