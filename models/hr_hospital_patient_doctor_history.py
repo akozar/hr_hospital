@@ -1,6 +1,6 @@
 import logging
 
-from odoo import models, fields
+from odoo import models, fields, api
 
 _logger = logging.getLogger(__name__)
 
@@ -28,3 +28,17 @@ class HRHPatientDoctorHistory(models.Model):
     date_end = fields.Date(string='End Date')
     reason = fields.Text(string='Reason for Change')
     active = fields.Boolean(string='Active', default=True)
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get('patient_id'):
+                # Deactivate previous active records
+                self.search([
+                    ('patient_id', '=', vals['patient_id']),
+                    ('active', '=', True),
+                ]).write({
+                    'date_end': fields.Date.today(),
+                    'active': False,
+                })
+        return super().create(vals_list)

@@ -60,6 +60,37 @@ class HRHPatientVisit(models.Model):
         string='Disease',
     )
 
+    diagnosis_count = fields.Integer(
+        string='Number of Diagnoses',
+        compute='_compute_diagnosis_count',
+    )
+
+    @api.depends('diagnosis_ids')
+    def _compute_diagnosis_count(self):
+        for record in self:
+            record.diagnosis_count = len(record.diagnosis_ids)
+
+    @api.onchange('patient_id')
+    def _onchange_patient_id(self):
+        if self.patient_id and self.patient_id.allergies:
+            return {
+                'warning': {
+                    'title': 'Allergy Alert!',
+                    'message': f'Patient has allergies: {self.patient_id.allergies}',
+                }
+            }
+
+    @api.onchange('doctor_id')
+    def _onchange_doctor_id(self):
+        if self.doctor_id and self.doctor_id.is_intern:
+            if self.doctor_id.mentor_id:
+                return {
+                    'warning': {
+                        'title': 'Intern Doctor',
+                        'message': f'This is an intern. Mentor: {self.doctor_id.mentor_id.name}',
+                    }
+                }
+
     @api.constrains('patient_id', 'doctor_id', 'scheduled_time')
     def _check_one_visit_per_day(self):
         for record in self:

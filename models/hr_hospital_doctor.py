@@ -77,6 +77,14 @@ class HRHDoctor(models.Model):
             else:
                 record.experience_years = 0
 
+    @api.depends('name', 'specialty_id')
+    def _compute_display_name(self):
+        for record in self:
+            if record.specialty_id:
+                record.display_name = f"{record.name} ({record.specialty_id.name})"
+            else:
+                record.display_name = record.name or ""
+
     @api.constrains('mentor_id')
     def _check_mentor_not_intern(self):
         for record in self:

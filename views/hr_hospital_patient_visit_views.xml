@@ -47,6 +47,12 @@
                                     <field name="is_approved"/>
                                     <field name="approved_by_id"/>
                                     <field name="approval_date"/>
+                                    <button name="action_approve"
+                                            type="object"
+                                            string="Approve"
+                                            icon="fa-check"
+                                            class="btn-success"
+                                            invisible="is_approved"/>
                                 </list>
                             </field>
                         </page>
