@@ -20,6 +20,7 @@
         'views/hr_hospital_menu.xml',
         'views/hr_hospital_doctor_specialty_views.xml',
         'views/hr_hospital_doctor_views.xml',
+        'views/hr_hospital_doctor_schedule_views.xml',
         'views/hr_hospital_patient_views.xml',
         'views/hr_hospital_disease_views.xml',
         'views/hr_hospital_contact_person_views.xml',
@@ -28,6 +29,7 @@
         'wizard/mass_reassign_doctor_wizard_views.xml',
         'wizard/disease_report_wizard_views.xml',
         'wizard/reschedule_visit_wizard_views.xml',
+        'wizard/doctor_schedule_wizard_views.xml',
         'data/hr_hospital_disease_master_data.xml',
     ],
     'demo': [
