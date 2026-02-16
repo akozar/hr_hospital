@@ -1,6 +1,6 @@
 import logging
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -17,20 +17,17 @@ class HRHPatientVisit(models.Model):
             ('cancelled', 'Cancelled'),
             ('no_show', 'No Show'),
         ],
-        string='Status',
         default='scheduled',
     )
     scheduled_time = fields.Datetime(string='Scheduled Date and Time')
     actual_time = fields.Datetime(string='Actual Date and Time')
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='Doctor',
         required=True,
         domain=[('license_number', '!=', False)],
     )
     patient_id = fields.Many2one(
         comodel_name='hr.hospital.patient',
-        string='Patient',
         required=True,
     )
     visit_type = fields.Selection(
@@ -40,25 +37,21 @@ class HRHPatientVisit(models.Model):
             ('preventive', 'Preventive'),
             ('emergency', 'Emergency'),
         ],
-        string='Visit Type',
     )
     diagnosis_ids = fields.One2many(
         comodel_name='hr.hospital.diagnosis',
         inverse_name='visit_id',
-        string='Diagnoses',
     )
-    recommendations = fields.Html(string='Recommendations')
+    recommendations = fields.Html()
     cost = fields.Monetary(string='Visit Cost', currency_field='currency_id')
     currency_id = fields.Many2one(
         comodel_name='res.currency',
-        string='Currency',
     )
 
     # Keep old field for compatibility
     visit_time = fields.Datetime(string='Visit Date and Time')
     disease_id = fields.Many2one(
         comodel_name='hr.hospital.disease',
-        string='Disease',
     )
 
     diagnosis_count = fields.Integer(
@@ -107,16 +100,18 @@ class HRHPatientVisit(models.Model):
                 ])
                 if existing:
                     raise ValidationError(
-                        _("Patient '%s' already has a visit scheduled with doctor '%s' on %s!") %
-                        (record.patient_id.name, record.doctor_id.name, visit_date)
+                        self.env._(
+                            "Patient '%(patient)s' already has a visit scheduled with doctor '%(doctor)s' on %(date)s!",
+                            patient=record.patient_id.name,
+                            doctor=record.doctor_id.name,
+                            date=visit_date,
+                        )
                     )
 
     def unlink(self):
         for record in self:
             if record.diagnosis_ids:
-                raise ValidationError(
-                    _("Cannot delete visit with diagnoses! Remove diagnoses first.")
-                )
+                record.diagnosis_ids.unlink()
         return super().unlink()
 
     def write(self, vals):
@@ -125,6 +120,6 @@ class HRHPatientVisit(models.Model):
             for record in self:
                 if record.state == 'done':
                     raise ValidationError(
-                        _("Cannot modify doctor, patient or scheduled time of completed visits!")
+                        self.env._("Cannot modify doctor, patient or scheduled time of completed visits!")
                     )
         return super().write(vals)

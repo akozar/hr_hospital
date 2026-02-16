@@ -1,7 +1,7 @@
 import logging
 from datetime import datetime, timedelta
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -19,7 +19,6 @@ class RescheduleVisitWizard(models.TransientModel):
     )
     patient_id = fields.Many2one(
         related='visit_id.patient_id',
-        string='Patient',
         readonly=True,
     )
     current_doctor_id = fields.Many2one(
@@ -34,14 +33,11 @@ class RescheduleVisitWizard(models.TransientModel):
     )
     new_doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='New Doctor',
     )
     new_date = fields.Date(
-        string='New Date',
         required=True,
     )
     new_time = fields.Float(
-        string='New Time',
         required=True,
     )
     reason = fields.Text(
@@ -70,7 +66,7 @@ class RescheduleVisitWizard(models.TransientModel):
         for record in self:
             if record.visit_id.state != 'scheduled':
                 raise ValidationError(
-                    _("Only scheduled visits can be rescheduled!")
+                    self.env._("Only scheduled visits can be rescheduled!")
                 )
 
     def action_reschedule(self):
@@ -78,7 +74,7 @@ class RescheduleVisitWizard(models.TransientModel):
 
         # Validate visit state
         if self.visit_id.state != 'scheduled':
-            raise ValidationError(_("Only scheduled visits can be rescheduled!"))
+            raise ValidationError(self.env._("Only scheduled visits can be rescheduled!"))
 
         # Build new scheduled_time from date + time
         hours = int(self.new_time)

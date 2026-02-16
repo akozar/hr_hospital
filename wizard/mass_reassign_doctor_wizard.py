@@ -11,20 +11,16 @@ class MassReassignDoctorWizard(models.TransientModel):
 
     new_doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='New Doctor',
         required=True,
     )
     patient_ids = fields.Many2many(
         comodel_name='hr.hospital.patient',
-        string='Patients',
     )
     change_date = fields.Date(
-        string='Change Date',
         default=fields.Date.today,
         required=True,
     )
     reason = fields.Text(
-        string='Reason for Change',
         required=True,
     )
 

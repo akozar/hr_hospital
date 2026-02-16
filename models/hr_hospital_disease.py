@@ -32,10 +32,9 @@ class HRHDisease(models.Model):
             ('high', 'High'),
             ('critical', 'Critical'),
         ],
-        string='Danger Level',
     )
-    is_contagious = fields.Boolean(string='Contagious', default=False)
-    symptoms = fields.Text(string='Symptoms')
+    is_contagious = fields.Boolean(default=False)
+    symptoms = fields.Text()
     region_ids = fields.Many2many(
         comodel_name='res.country',
         string='Spread Regions',

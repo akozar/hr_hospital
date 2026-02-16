@@ -11,12 +11,10 @@ class DiseaseReportWizard(models.TransientModel):
 
     doctor_ids = fields.Many2many(
         comodel_name='hr.hospital.doctor',
-        string='Doctors',
         help='If empty, all doctors will be included',
     )
     disease_ids = fields.Many2many(
         comodel_name='hr.hospital.disease',
-        string='Diseases',
         help='If empty, all diseases will be included',
     )
     country_ids = fields.Many2many(
@@ -25,11 +23,9 @@ class DiseaseReportWizard(models.TransientModel):
         help='Filter by patient citizenship country',
     )
     date_from = fields.Date(
-        string='Date From',
         required=True,
     )
     date_to = fields.Date(
-        string='Date To',
         required=True,
     )
 
@@ -39,7 +35,6 @@ class DiseaseReportWizard(models.TransientModel):
             ('detailed', 'Detailed'),
             ('summary', 'Summary'),
         ],
-        string='Report Type',
         default='detailed',
         required=True,
     )
@@ -51,7 +46,6 @@ class DiseaseReportWizard(models.TransientModel):
             ('month', 'By Month'),
             ('country', 'By Country'),
         ],
-        string='Group By',
         default='doctor',
     )
 

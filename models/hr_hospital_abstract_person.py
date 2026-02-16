@@ -14,9 +14,9 @@ class AbstractPerson(models.AbstractModel):
     _inherit = ['image.mixin']
 
     # Name fields (ПІБ)
-    surname = fields.Char(string='Surname')
-    first_name = fields.Char(string='First Name')
-    patronymic = fields.Char(string='Patronymic')
+    surname = fields.Char()
+    first_name = fields.Char()
+    patronymic = fields.Char()
 
     # Computed full name
     name = fields.Char(
@@ -26,8 +26,8 @@ class AbstractPerson(models.AbstractModel):
     )
 
     # Contact info with validation
-    phone = fields.Char(string='Phone')
-    email = fields.Char(string='Email')
+    phone = fields.Char()
+    email = fields.Char()
 
     # Gender selection
     gender = fields.Selection(
@@ -36,15 +36,11 @@ class AbstractPerson(models.AbstractModel):
             ('female', 'Female'),
             ('other', 'Other'),
         ],
-        string='Gender',
     )
 
     # Birth date and computed age
     birth_date = fields.Date(string='Date of Birth')
-    age = fields.Integer(
-        string='Age',
-        compute='_compute_age',
-    )
+    age = fields.Integer(compute='_compute_age')
 
     # Related fields
     country_id = fields.Many2one(
@@ -77,14 +73,14 @@ class AbstractPerson(models.AbstractModel):
         phone_pattern = re.compile(r'^\+?[\d\s\-\(\)]{7,20}$')
         for record in self:
             if record.phone and not phone_pattern.match(record.phone):
-                raise ValidationError("Invalid phone format")
+                raise ValidationError(self.env._("Invalid phone format"))
 
     @api.constrains('email')
     def _check_email(self):
         email_pattern = re.compile(r'^[\w\.-]+@[\w\.-]+\.\w+$')
         for record in self:
             if record.email and not email_pattern.match(record.email):
-                raise ValidationError("Invalid email format")
+                raise ValidationError(self.env._("Invalid email format"))
 
     @api.constrains('birth_date')
     def _check_age_positive(self):
@@ -92,8 +88,8 @@ class AbstractPerson(models.AbstractModel):
         for record in self:
             if record.birth_date:
                 if record.birth_date > today:
-                    raise ValidationError("Birth date cannot be in the future!")
+                    raise ValidationError(self.env._("Birth date cannot be in the future!"))
                 bd = record.birth_date
                 age = today.year - bd.year - ((today.month, today.day) < (bd.month, bd.day))
                 if age <= 0:
-                    raise ValidationError("Age must be greater than 0!")
+                    raise ValidationError(self.env._("Age must be greater than 0!"))

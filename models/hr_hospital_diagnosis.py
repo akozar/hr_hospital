@@ -1,7 +1,7 @@
 import logging
 from datetime import timedelta
 
-from odoo import models, fields, api
+from odoo import models, fields
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -13,7 +13,6 @@ class HRHDiagnosis(models.Model):
 
     visit_id = fields.Many2one(
         comodel_name='hr.hospital.patient.visit',
-        string='Visit',
         required=True,
         ondelete='cascade',
         domain=lambda self: [
@@ -23,21 +22,19 @@ class HRHDiagnosis(models.Model):
     )
     disease_id = fields.Many2one(
         comodel_name='hr.hospital.disease',
-        string='Disease',
         domain=[
             ('is_contagious', '=', True),
             ('danger_level', 'in', ['high', 'critical']),
         ],
     )
-    description = fields.Text(string='Diagnosis Description')
+    description = fields.Text()
     treatment = fields.Html(string='Prescribed Treatment')
-    is_approved = fields.Boolean(string='Approved', default=False)
+    is_approved = fields.Boolean(default=False)
     approved_by_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='Approved By',
         readonly=True,
     )
-    approval_date = fields.Datetime(string='Approval Date', readonly=True)
+    approval_date = fields.Datetime(readonly=True)
     severity = fields.Selection(
         selection=[
             ('mild', 'Mild'),
@@ -45,7 +42,6 @@ class HRHDiagnosis(models.Model):
             ('severe', 'Severe'),
             ('critical', 'Critical'),
         ],
-        string='Severity',
     )
 
     def action_approve(self):
@@ -59,14 +55,17 @@ class HRHDiagnosis(models.Model):
         visit_doctor = self.visit_id.doctor_id
 
         if not current_doctor:
-            raise ValidationError("You must be a doctor to approve diagnoses.")
+            raise ValidationError(self.env._("You must be a doctor to approve diagnoses."))
 
         # If visit doctor is intern, only their mentor can approve
         if visit_doctor.is_intern:
             if current_doctor != visit_doctor.mentor_id:
                 raise ValidationError(
-                    f"Only the mentor ({visit_doctor.mentor_id.name}) "
-                    f"can approve diagnoses for intern {visit_doctor.name}."
+                    self.env._(
+                        "Only the mentor (%(mentor)s) can approve diagnoses for intern %(intern)s.",
+                        mentor=visit_doctor.mentor_id.name,
+                        intern=visit_doctor.name,
+                    )
                 )
 
         self.write({

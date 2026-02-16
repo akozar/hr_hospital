@@ -5,7 +5,7 @@ import base64
 import logging
 from datetime import datetime
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 
 _logger = logging.getLogger(__name__)
 
@@ -16,35 +16,30 @@ class PatientCardExportWizard(models.TransientModel):
 
     patient_id = fields.Many2one(
         comodel_name='hr.hospital.patient',
-        string='Patient',
         required=True,
     )
-    date_from = fields.Date(string='Date From')
-    date_to = fields.Date(string='Date To')
+    date_from = fields.Date()
+    date_to = fields.Date()
     include_diagnoses = fields.Boolean(
-        string='Include Diagnoses',
         default=True,
     )
     include_recommendations = fields.Boolean(
-        string='Include Recommendations',
         default=True,
     )
     lang_id = fields.Many2one(
         comodel_name='res.lang',
-        string='Report Language',
     )
     export_format = fields.Selection(
         selection=[
             ('json', 'JSON'),
             ('csv', 'CSV'),
         ],
-        string='Export Format',
         default='json',
         required=True,
     )
     # For file download
-    export_file = fields.Binary(string='Export File', readonly=True)
-    export_filename = fields.Char(string='Filename', readonly=True)
+    export_file = fields.Binary(readonly=True)
+    export_filename = fields.Char(readonly=True)
 
     @api.model
     def default_get(self, fields_list):

@@ -16,10 +16,9 @@ class HRHPatient(models.Model):
         comodel_name='hr.hospital.doctor',
         string='Personal Doctor',
     )
-    passport_data = fields.Char(string='Passport Data', size=10)
+    passport_data = fields.Char(size=10)
     contact_person_id = fields.Many2one(
         comodel_name='hr.hospital.contact.person',
-        string='Contact Person',
     )
     blood_group = fields.Selection(
         selection=[
@@ -32,24 +31,20 @@ class HRHPatient(models.Model):
             ('ab_pos', 'AB(IV) Rh+'),
             ('ab_neg', 'AB(IV) Rh-'),
         ],
-        string='Blood Group',
     )
-    allergies = fields.Text(string='Allergies')
+    allergies = fields.Text()
     insurance_company_id = fields.Many2one(
         comodel_name='res.partner',
-        string='Insurance Company',
         domain=[('is_company', '=', True)],
     )
-    insurance_policy_number = fields.Char(string='Insurance Policy Number')
+    insurance_policy_number = fields.Char()
     doctor_history_ids = fields.One2many(
         comodel_name='hr.hospital.patient.doctor.history',
         inverse_name='patient_id',
-        string='Doctor History',
     )
 
     res_partner_id = fields.Many2one(
         comodel_name='res.partner',
-        string='Contact',
     )
 
     def write(self, vals):

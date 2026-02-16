@@ -1,7 +1,7 @@
 import logging
 from datetime import date
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -34,16 +34,13 @@ class HRHDoctor(models.Model):
     )
     specialty_id = fields.Many2one(
         comodel_name='hr.hospital.doctor.specialty',
-        string='Specialty',
     )
-    is_intern = fields.Boolean(string='Intern', default=False)
+    is_intern = fields.Boolean(default=False)
     mentor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='Mentor',
         domain=[('is_intern', '=', False)],
     )
     license_number = fields.Char(
-        string='License Number',
         required=True,
         copy=False,
     )
@@ -52,7 +49,7 @@ class HRHDoctor(models.Model):
         string='Experience (Years)',
         compute='_compute_experience_years',
     )
-    rating = fields.Float(string='Rating', digits=(3, 2))
+    rating = fields.Float(digits=(3, 2))
     schedule_ids = fields.One2many(
         comodel_name='hr.hospital.doctor.schedule',
         inverse_name='doctor_id',
@@ -65,7 +62,6 @@ class HRHDoctor(models.Model):
 
     res_partner_id = fields.Many2one(
         comodel_name='res.partner',
-        string='Contact',
     )
 
     @api.depends('license_date')
@@ -90,13 +86,13 @@ class HRHDoctor(models.Model):
     def _check_mentor_not_intern(self):
         for record in self:
             if record.mentor_id and record.mentor_id.is_intern:
-                raise ValidationError(_("Mentor cannot be an intern!"))
+                raise ValidationError(self.env._("Mentor cannot be an intern!"))
 
     @api.constrains('mentor_id')
     def _check_mentor_not_self(self):
         for record in self:
             if record.mentor_id and record.mentor_id == record:
-                raise ValidationError(_("Doctor cannot be their own mentor!"))
+                raise ValidationError(self.env._("Doctor cannot be their own mentor!"))
 
     def write(self, vals):
         if 'active' in vals and not vals['active']:
@@ -107,6 +103,9 @@ class HRHDoctor(models.Model):
                 ])
                 if active_visits:
                     raise ValidationError(
-                        _("Cannot archive doctor '%s' with active scheduled visits!") % record.name
+                        self.env._(
+                            "Cannot archive doctor '%(name)s' with active scheduled visits!",
+                            name=record.name,
+                        )
                     )
         return super().write(vals)

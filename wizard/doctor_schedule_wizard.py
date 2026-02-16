@@ -1,7 +1,7 @@
 import logging
 from datetime import timedelta
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -13,7 +13,6 @@ class DoctorScheduleWizard(models.TransientModel):
 
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='Doctor',
         required=True,
     )
     week_start = fields.Date(
@@ -31,17 +30,16 @@ class DoctorScheduleWizard(models.TransientModel):
             ('even_week', 'Even Weeks Only'),
             ('odd_week', 'Odd Weeks Only'),
         ],
-        string='Schedule Pattern',
         default='standard',
         required=True,
     )
-    monday = fields.Boolean(string='Monday', default=True)
-    tuesday = fields.Boolean(string='Tuesday', default=True)
-    wednesday = fields.Boolean(string='Wednesday', default=True)
-    thursday = fields.Boolean(string='Thursday', default=True)
-    friday = fields.Boolean(string='Friday', default=True)
-    saturday = fields.Boolean(string='Saturday', default=False)
-    sunday = fields.Boolean(string='Sunday', default=False)
+    monday = fields.Boolean(default=True)
+    tuesday = fields.Boolean(default=True)
+    wednesday = fields.Boolean(default=True)
+    thursday = fields.Boolean(default=True)
+    friday = fields.Boolean(default=True)
+    saturday = fields.Boolean(default=False)
+    sunday = fields.Boolean(default=False)
     time_from = fields.Float(
         string='Start Time',
         required=True,
@@ -52,8 +50,8 @@ class DoctorScheduleWizard(models.TransientModel):
         required=True,
         default=17.0,
     )
-    break_from = fields.Float(string='Break From')
-    break_to = fields.Float(string='Break To')
+    break_from = fields.Float()
+    break_to = fields.Float()
 
     @api.model
     def default_get(self, fields_list):
@@ -68,7 +66,7 @@ class DoctorScheduleWizard(models.TransientModel):
         for record in self:
             if record.time_to <= record.time_from:
                 raise ValidationError(
-                    _("End time must be greater than start time!")
+                    self.env._("End time must be greater than start time!")
                 )
 
     @api.constrains('break_from', 'break_to')
@@ -77,12 +75,12 @@ class DoctorScheduleWizard(models.TransientModel):
             if record.break_from and record.break_to:
                 if record.break_to <= record.break_from:
                     raise ValidationError(
-                        _("Break end must be after break start!")
+                        self.env._("Break end must be after break start!")
                     )
                 if (record.break_from < record.time_from or
                         record.break_to > record.time_to):
                     raise ValidationError(
-                        _("Break must be within working hours!")
+                        self.env._("Break must be within working hours!")
                     )
 
     @api.constrains('num_weeks')
@@ -90,7 +88,7 @@ class DoctorScheduleWizard(models.TransientModel):
         for record in self:
             if record.num_weeks < 1:
                 raise ValidationError(
-                    _("Number of weeks must be at least 1!")
+                    self.env._("Number of weeks must be at least 1!")
                 )
 
     def action_generate_schedule(self):
@@ -117,7 +115,7 @@ class DoctorScheduleWizard(models.TransientModel):
                 selected_days.append((day_name, day_value))
 
         if not selected_days:
-            raise ValidationError(_("Please select at least one working day!"))
+            raise ValidationError(self.env._("Please select at least one working day!"))
 
         # Calculate dates for each week
         current_date = self.week_start
@@ -186,7 +184,7 @@ class DoctorScheduleWizard(models.TransientModel):
         # Return action to show created schedules
         return {
             'type': 'ir.actions.act_window',
-            'name': _('Generated Schedules'),
+            'name': self.env._('Generated Schedules'),
             'res_model': 'hr.hospital.doctor.schedule',
             'view_mode': 'list,form',
             'domain': [('doctor_id', '=', self.doctor_id.id)],

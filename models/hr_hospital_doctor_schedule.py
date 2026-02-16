@@ -16,7 +16,6 @@ class HRHDoctorSchedule(models.Model):
 
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='Doctor',
         required=True,
         ondelete='cascade',
         domain=[('specialty_id', '!=', False)],
@@ -31,11 +30,10 @@ class HRHDoctorSchedule(models.Model):
             ('5', 'Saturday'),
             ('6', 'Sunday'),
         ],
-        string='Day of Week',
     )
-    date = fields.Date(string='Specific Date')
-    time_from = fields.Float(string='From')
-    time_to = fields.Float(string='To')
+    date = fields.Date()
+    time_from = fields.Float()
+    time_to = fields.Float()
     schedule_type = fields.Selection(
         selection=[
             ('working', 'Working Day'),
@@ -43,7 +41,6 @@ class HRHDoctorSchedule(models.Model):
             ('sick_leave', 'Sick Leave'),
             ('conference', 'Conference'),
         ],
-        string='Type',
         default='working',
     )
-    notes = fields.Char(string='Notes')
+    notes = fields.Char()

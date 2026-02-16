@@ -11,13 +11,11 @@ class HRHPatientDoctorHistory(models.Model):
 
     patient_id = fields.Many2one(
         comodel_name='hr.hospital.patient',
-        string='Patient',
         required=True,
         ondelete='cascade',
     )
     doctor_id = fields.Many2one(
         comodel_name='hr.hospital.doctor',
-        string='Doctor',
         required=True,
     )
     date_start = fields.Date(
@@ -25,9 +23,9 @@ class HRHPatientDoctorHistory(models.Model):
         required=True,
         default=fields.Date.today,
     )
-    date_end = fields.Date(string='End Date')
+    date_end = fields.Date()
     reason = fields.Text(string='Reason for Change')
-    active = fields.Boolean(string='Active', default=True)
+    active = fields.Boolean(default=True)
 
     @api.model_create_multi
     def create(self, vals_list):

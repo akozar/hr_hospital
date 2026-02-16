@@ -11,10 +11,9 @@ class HRHDoctorSpecialty(models.Model):
 
     name = fields.Char(string='Specialty Name', required=True)
     code = fields.Char(string='Specialty Code', size=10, required=True)
-    description = fields.Text(string='Description')
-    active = fields.Boolean(string='Active', default=True)
+    description = fields.Text()
+    active = fields.Boolean(default=True)
     doctor_ids = fields.One2many(
         comodel_name='hr.hospital.doctor',
         inverse_name='specialty_id',
-        string='Doctors',
     )

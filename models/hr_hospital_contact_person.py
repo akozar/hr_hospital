@@ -12,6 +12,5 @@ class HRHContactPerson(models.Model):
 
     patient_ids = fields.Many2many(
         comodel_name='hr.hospital.patient',
-        string='Patients',
         domain=[('allergies', '!=', False)],
     )

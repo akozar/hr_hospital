@@ -1,10 +1,9 @@
 {
     'name': 'HR Hospital',
-    'summary': '',
     'author': 'Oleksandr Kozar',
     'website': 'https://odoo.school/',
     'category': 'Customizations',
-    'license': 'OPL-1',
+    'license': 'LGPL-3',
     'version': '19.0.0.0.4',
 
     'depends': [
@@ -43,11 +42,4 @@
         'demo/hr_hospital_patient_visit_demo.xml',
         'demo/hr_hospital_diagnosis_demo.xml',
     ],
-
-    'installable': True,
-    'auto_install': False,
-
-    'images': [
-    ],
-
 }
