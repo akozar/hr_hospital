@@ -39,8 +39,6 @@ class HRHDiagnosis(models.Model):
         string='Severity',
     )
 
-
-    # TODO Check feature
     def action_approve(self):
         self.ensure_one()
 
@@ -51,10 +49,11 @@ class HRHDiagnosis(models.Model):
 
         visit_doctor = self.visit_id.doctor_id
 
+        if not current_doctor:
+            raise ValidationError("You must be a doctor to approve diagnoses.")
+
         # If visit doctor is intern, only their mentor can approve
         if visit_doctor.is_intern:
-            if not current_doctor:
-                raise ValidationError("You must be a doctor to approve diagnoses.")
             if current_doctor != visit_doctor.mentor_id:
                 raise ValidationError(
                     f"Only the mentor ({visit_doctor.mentor_id.name}) "
