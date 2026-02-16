@@ -27,6 +27,7 @@
         'views/hr_hospital_diagnosis_views.xml',
         'wizard/mass_reassign_doctor_wizard_views.xml',
         'wizard/disease_report_wizard_views.xml',
+        'wizard/reschedule_visit_wizard_views.xml',
         'data/hr_hospital_disease_master_data.xml',
     ],
     'demo': [

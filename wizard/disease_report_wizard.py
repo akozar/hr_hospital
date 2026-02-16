@@ -32,6 +32,8 @@ class DiseaseReportWizard(models.TransientModel):
         string='Date To',
         required=True,
     )
+
+    # TODO What is a difference?
     report_type = fields.Selection(
         selection=[
             ('detailed', 'Detailed'),
@@ -41,6 +43,7 @@ class DiseaseReportWizard(models.TransientModel):
         default='detailed',
         required=True,
     )
+    # How to do this?
     group_by = fields.Selection(
         selection=[
             ('doctor', 'By Doctor'),
