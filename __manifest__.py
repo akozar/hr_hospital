@@ -5,7 +5,7 @@
     'website': 'https://odoo.school/',
     'category': 'Customizations',
     'license': 'OPL-1',
-    'version': '19.0.0.0.3',
+    'version': '19.0.0.0.4',
 
     'depends': [
         'base',
@@ -24,6 +24,7 @@
         'views/hr_hospital_disease_views.xml',
         'views/hr_hospital_contact_person_views.xml',
         'views/hr_hospital_patient_visit_views.xml',
+        'wizard/mass_reassign_doctor_wizard_views.xml',
         'data/hr_hospital_disease_master_data.xml',
     ],
     'demo': [
