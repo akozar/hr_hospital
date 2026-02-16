@@ -1,0 +1,52 @@
+<odoo>
+    <record id="hr_hospital_diagnosis_list" model="ir.ui.view">
+        <field name="name">hr.hospital.diagnosis.list</field>
+        <field name="model">hr.hospital.diagnosis</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="visit_id"/>
+                <field name="disease_id"/>
+                <field name="severity"/>
+                <field name="is_approved"/>
+                <field name="approved_by_id"/>
+                <field name="approval_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_form" model="ir.ui.view">
+        <field name="name">hr.hospital.diagnosis.form</field>
+        <field name="model">hr.hospital.diagnosis</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_approve" type="object"
+                            string="Approve" class="btn-primary"
+                            invisible="is_approved"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="visit_id"/>
+                            <field name="disease_id"/>
+                            <field name="severity"/>
+                        </group>
+                        <group>
+                            <field name="is_approved"/>
+                            <field name="approved_by_id"/>
+                            <field name="approval_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Treatment">
+                            <field name="treatment"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

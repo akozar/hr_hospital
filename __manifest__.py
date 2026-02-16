@@ -24,7 +24,9 @@
         'views/hr_hospital_disease_views.xml',
         'views/hr_hospital_contact_person_views.xml',
         'views/hr_hospital_patient_visit_views.xml',
+        'views/hr_hospital_diagnosis_views.xml',
         'wizard/mass_reassign_doctor_wizard_views.xml',
+        'wizard/disease_report_wizard_views.xml',
         'data/hr_hospital_disease_master_data.xml',
     ],
     'demo': [
